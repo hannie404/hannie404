@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://example.com/path/to/your/anigif.gif" alt="Animated Code GIF" width="800" height="400" />
+  <img src="https://pin.it/BuZf7w8.gif" alt="Animated Code GIF" width="800" height="400"/>
 </p>
 
 # Hi, I'm Annie
