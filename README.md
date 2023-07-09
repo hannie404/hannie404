@@ -1,4 +1,4 @@
-[![Pinterest](https://i.pinimg.com/originals/56/57/7e/56577e48acdd6b57a6cbb3a07547a36c.gif)](https://www.pinterest.ph/pin/721209327847122310/)
+<img src="Private GIF.gif"/>
 
 # Hi, I'm Annie
 
