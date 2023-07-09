@@ -1,4 +1,4 @@
-![Example Image](night.gif)
+![Example Image](code.gif)
 
 # Hi, I'm Annie
 
