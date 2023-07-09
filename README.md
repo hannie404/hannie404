@@ -2,7 +2,7 @@
   <img src="https://example.com/path/to/your/anigif.gif" alt="Animated Code GIF" width="800" height="400" />
 </p>
 
-# Hi, I'm [Your Name]
+# Hi, I'm Annie
 
 ## About Me
 I am a passionate developer interested in building amazing things with code. I specialize in [mention your key skills or technologies].
@@ -19,9 +19,7 @@ I am a passionate developer interested in building amazing things with code. I s
 Feel free to reach out to me on any of these platforms. I'm always excited to connect with fellow developers, discuss ideas, and collaborate on interesting projects!
 
 ## Projects
-- [Project 1](link-to-project1): Short description of Project 1.
-- [Project 2](link-to-project2): Short description of Project 2.
-- [Project 3](link-to-project3): Short description of Project 3.
+- [Blockchain](https://hannie404.github.io/blockchain/): This project aims to provide an understanding of the potential of blockchain and NFTs, showcasing the myriad of opportunities they present for innovation, decentralization, and democratization across sectors. By exploring real-world examples and emerging trends, this project seeks to inspire and educate readers.
 
 ## Skills
 - Skill 1
@@ -29,12 +27,10 @@ Feel free to reach out to me on any of these platforms. I'm always excited to co
 - Skill 3
 
 ## Work Experience
-- Company A: Position, Duration
-- Company B: Position, Duration
-
+- Fiverr - Freelance Front-end Developer & UI/Ux Designer
+- CLoudhost - Server administrator
 ## Education
-- University: Degree, Year
-- School: Certification, Year
+- Mindanao State University : BSIT
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
