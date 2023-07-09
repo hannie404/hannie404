@@ -1,4 +1,4 @@
-<img src="./Private GIF.gif"/>
+![Example Image](images/image.jpg)
 
 # Hi, I'm Annie
 
@@ -20,9 +20,16 @@ Feel free to reach out to me on any of these platforms. I'm always excited to co
 - [Blockchain](https://hannie404.github.io/blockchain/): This project aims to provide an understanding of the potential of blockchain and NFTs, showcasing the myriad of opportunities they present for innovation, decentralization, and democratization across sectors. By exploring real-world examples and emerging trends, this project seeks to inspire and educate readers.
 
 ## Skills
-- Skill 1
-- Skill 2
-- Skill 3
+- Professionalism
+- Empathy
+- Continuous Learning
+- Creativity
+- Attention to Detail
+- Time Management
+- Teamwork and Collaboration
+- Adaptability
+- Problem Solving
+- Communication
 
 ## Work Experience
 - Fiverr - Freelance Front-end Developer & UI/Ux Designer
