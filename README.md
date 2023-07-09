@@ -1,4 +1,4 @@
-<img src="Private GIF.gif"/>
+<img src="./Private GIF.gif"/>
 
 # Hi, I'm Annie
 
