@@ -3,7 +3,7 @@
 # Hi, I'm Annie
 
 ## About Me
-I am a passionate developer interested in building amazing things with code. I specialize in [mention your key skills or technologies].
+I am a passionate developer interested in building amazing things with code. I specialize in HTML, CSS, JavaScript, Bootstrap, React, MySQL, PHP and C++.
 
 ## Connect with Me
 
