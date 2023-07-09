@@ -1,9 +1,20 @@
-![Example Image](night2.gif)
+![Example Image](night.gif)
 
 # Hi, I'm Annie
 
 ## About Me
-I am a passionate developer interested in building amazing things with code. I specialize in HTML, CSS, JavaScript, Bootstrap, React, MySQL, PHP and C++.
+I am a passionate developer interested in building amazing things with code. 
+
+### Languages and Technologies
+
+![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=flat-square)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&style=flat-square)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat-square)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white&style=flat-square)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=flat-square)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white&style=flat-square)
+![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white&style=flat-square)
+![C++](https://img.shields.io/badge/C++-00599C?logo=c%2B%2B&logoColor=white&style=flat-square)
 
 ## Connect with Me
 
