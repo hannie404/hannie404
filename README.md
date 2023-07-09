@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://pin.it/BuZf7w8.gif" alt="Animated Code GIF" width="800" height="400"/>
-</p>
+<iframe src="https://assets.pinterest.com/ext/embed.html?id=6051780740585546" height="254" width="345" frameborder="0" scrolling="no" ></iframe>
 
 # Hi, I'm Annie
 
