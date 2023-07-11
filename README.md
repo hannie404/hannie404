@@ -3,7 +3,14 @@
 # Hi, I'm Annie
 
 ## About Me
-I am a passionate developer interested in building amazing things with code. 
+I am a passionate developer interested in building amazing things with code.
+
+### My Portfolio
+<p align="center">
+  <a href="YOUR_NETLIFY_PORTFOLIO_LINK">
+    <img src="https://img.icons8.com/nolan/64/github.png" alt="My Portfolio" />
+  </a>
+</p>
 
 ### Languages and Technologies
 
