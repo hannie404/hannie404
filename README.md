@@ -32,6 +32,16 @@ I am a passionate developer interested in building amazing things with code.
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white&style=flat-square)
 ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white&style=flat-square)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white&style=flat-square)
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=flat-square&logo=amazon-aws&logoColor=white) 
+![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=flat-square&logo=netlify&logoColor=#00C7B7) 
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=flat-square&logo=vercel&logoColor=white) 
+![Google Cloud](https://img.shields.io/badge/Google%20Cloud-%234285F4.svg?style=flat-square&logo=google-cloud&logoColor=white) 
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=flat-square&logo=angular&logoColor=white) 
+![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=flat-square&logo=laravel&logoColor=white) 
+![Next JS](https://img.shields.io/badge/Next-black?style=flat-square&logo=next.js&logoColor=white) 
+![Adobe XD](https://img.shields.io/badge/Adobe%20XD-470137?style=flat-square&logo=Adobe%20XD&logoColor=#FF61F6) 
+![LINUX](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black) 
+
 
 
 ## Connect with Me
@@ -66,5 +76,4 @@ Feel free to reach out to me on any of these platforms. I'm always excited to co
 ## Education
 - Mindanao State University : BSIT
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+
