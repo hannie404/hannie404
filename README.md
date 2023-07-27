@@ -79,4 +79,3 @@ Feel free to reach out to me on any of these platforms. I'm always excited to co
 ## GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=hannie404&theme=vue-dark&hide_border=true&include_all_commits=false&count_private=true)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=hannie404&theme=vue-dark&hide_border=true)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=hannie404&theme=vue-dark&hide_border=true&include_all_commits=false&count_private=true&layout=compact)
