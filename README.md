@@ -1,4 +1,4 @@
-![Example Image](rocket.gif)
+![Example Image](banner1.png)
 
 # Hi, I'm Annie
 
