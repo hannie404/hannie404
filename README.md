@@ -55,9 +55,9 @@ I am a passionate developer interested in building amazing things with code.
 
 Feel free to reach out to me on any of these platforms. I'm always excited to connect with fellow developers, discuss ideas, and collaborate on interesting projects!
 
-## Projects
+<!--## Projects
 - [Blockchain](https://hannie404.github.io/blockchain/): This project aims to provide an understanding of the potential of blockchain and NFTs, showcasing the myriad of opportunities they present for innovation, decentralization, and democratization across sectors. By exploring real-world examples and emerging trends, this project seeks to inspire and educate readers.
-
+-->
 ## Skills
 - Professionalism
 - Empathy
