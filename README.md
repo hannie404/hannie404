@@ -43,7 +43,7 @@ I am a passionate developer interested in building amazing things with code.
 ![LINUX](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black) 
 
 
-
+<!--
 ## Connect with Me
 
 [![YouTube](https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/your-channel-link)
@@ -54,6 +54,7 @@ I am a passionate developer interested in building amazing things with code.
 [![Facebook](https://img.shields.io/badge/Facebook-blue?style=for-the-badge&logo=facebook)](https://www.facebook.com/your-facebook-profile)
 
 Feel free to reach out to me on any of these platforms. I'm always excited to connect with fellow developers, discuss ideas, and collaborate on interesting projects!
+-->
 
 <!--## Projects
 - [Blockchain](https://hannie404.github.io/blockchain/): This project aims to provide an understanding of the potential of blockchain and NFTs, showcasing the myriad of opportunities they present for innovation, decentralization, and democratization across sectors. By exploring real-world examples and emerging trends, this project seeks to inspire and educate readers.
