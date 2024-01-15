@@ -1,7 +1,7 @@
 ![Example Image](banner1.png)
-<!--
-# Hi, I'm Annie!
 
+# Hi, I'm Annie!
+<!--
 ## About Me
 I am a passionate developer interested in building amazing things with code.
 
