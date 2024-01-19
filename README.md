@@ -1,7 +1,7 @@
 ![Example Image](banner1.png)
 
 # Hi, I'm Annie!
-<!--
+
 ## About Me
 I am a passionate developer interested in building amazing things with code.
 
@@ -11,7 +11,7 @@ I am a passionate developer interested in building amazing things with code.
     <img src="https://img.icons8.com/nolan/64/github.png" alt="My Portfolio" />
   </a>
 </p>
--->
+
 ### Languages and Technologies 
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=flat-square)
