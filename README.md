@@ -73,10 +73,10 @@ Feel free to reach out to me on any of these platforms. I'm always excited to co
 
 ## Work Experience
 - Fiverr - Freelance Front-end Developer & UI/Ux Designer
-- CLoudhost - Server administrator
-- Rocketium - Software Engineer Intern
-- Penni - Software Engineer Intern
+- iHost - Server administrator
 - ABDevify Inc. - Front-end Developer & UI/UX Designer
+- Sparksoft Solutions Inc. - Software Engineer Intern
+- Edukai - Software Developer
   
 ## Education
 - Mindanao State University : BSIT
