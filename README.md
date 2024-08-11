@@ -59,7 +59,7 @@ Feel free to reach out to me on any of these platforms. I'm always excited to co
 </a>-->
 
  <div align="center">
-  <h1>About Me</h1>
+  <h3>About Me 🎖️</h3>
 
 <a href="https://annie-dev.netlify.app/" target="_blank">
 <img src="https://skillicons.dev/icons?i=azure&theme=dark" ></a>
@@ -74,30 +74,46 @@ Feel free to reach out to me on any of these platforms. I'm always excited to co
  <img src="https://readme-typing-svg.herokuapp.com?color=white&lines=I'm+Annie+Neshreen+Ibrahim;A+Software+Engineer;An+Open+Source+Contributor;A+Proactive+Learner" />
             <p > I am highly passionate about learning different programming languages, technologies, and skills that I can use for my work and projects. I have an experience in freelancing particularly in web development and data science and still learning things to grow in the tech industry.</p>
             <br />
- <div style="display:flex;">
- <img src="https://komarev.com/ghpvc/?username=mart-anthony-stark" />
+
+[![](https://visitcount.itsvg.in/api?id=Hannie404&icon=0&color=0)](https://visitcount.itsvg.in)
+
+ <!--<div style="display:flex;">
+ <img src="https://komarev.com/ghpvc/?username=hannie404" />
   <a href="https://commits.top/philippines.html" target="_blank">
-<!--<img src="https://en5jrhdk1emb4po.m.pipedream.net">-->
+<img src="https://en5jrhdk1emb4po.m.pipedream.net">
  </div>
  </a>
- </div>
+ </div>-->
  
 <div align='center'>
- <br/>
-<h3>My Current Skillset</h3> 
+<h3>My Current Skillset 🚀</h3> 
  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,vue,nuxt,next,nest,java,spring,mongo,mysql,python,flask,git&theme=dark&perline=8" />
  <br>
  <img src="https://skillicons.dev/icons?i=figma,tailwind,redux,express,aws,python,svelte,bootstrap,laravel,nodejs,cpp&theme=dark" />
  
- <br>
+ <br/>
  
 </div>
  
- <br><br>
  <p align="center" style="display:flex;align-items:center;justify-content:center;gap:20px !important;flex-wrap:wrap;margin-bottom:20px !important;"> 
 
- <br/>
- <!--<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=hannie404&theme=tokyonight" />-->
- <img src="https://github-readme-streak-stats.herokuapp.com/?user=hannie404&theme=tokyonight" />
+ <!--<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=hannie404&theme=tokyonight" />
+ <img src="https://github-readme-streak-stats.herokuapp.com/?user=hannie404&theme=radical&hide" />-->
+</p>
+<br/>
+<div align='center'>
+<h3>My Github Stats 📊</h3>
+
+<p align="center" style="display:flex;align-items:center;justify-content:center;gap:20px !important;flex-wrap:wrap;margin-bottom:20px !important;"> 
+  
+<!--![](https://github-readme-stats.vercel.app/api?username=Hannie404&theme=radical&hide_border=false&include_all_commits=true&count_private=true)<br/>-->
+![](https://github-readme-streak-stats.herokuapp.com/?user=Hannie404&theme=radical&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=Hannie404&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+
 </p>
 
+<h3>My Trophies 🏆</h3>
+
+![](https://github-profile-trophy.vercel.app/?username=Hannie404&theme=radical&no-frame=false&no-bg=false&margin-w=4)
+
+</div>
