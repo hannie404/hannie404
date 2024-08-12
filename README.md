@@ -89,7 +89,7 @@ Feel free to reach out to me on any of these platforms. I'm always excited to co
 <h3>My Current Skillset 🚀</h3> 
  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,vue,nuxt,next,nest,java,spring,mongo,mysql,python,flask,git&theme=dark&perline=8" />
  <br>
- <img src="https://skillicons.dev/icons?i=figma,tailwind,redux,express,aws,python,svelte,bootstrap,laravel,nodejs,cpp&theme=dark" />
+ <img src="https://skillicons.dev/icons?i=figma,tailwind,redux,express,aws,svelte,bootstrap,laravel,nodejs,cpp&theme=dark" />
  
  <br/>
  
