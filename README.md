@@ -36,12 +36,8 @@
  </div>-->
  
 <div align='center'>
-<h3>My Current Skillset 🚀</h3> 
- <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,vue,next,nest,java,spring,mongo,mysql,python,flask,figma,tailwind,redux,express,aws,svelte,bootstrap,laravel,nodejs,cpp&theme=dark&perline=8" />
- <br>
- 
- <br/>
- 
+	<h3>My Current Skillset 🚀</h3> 
+	<img src="https://skillicons.dev/icons?i=html,css,js,ts,react,vue,next,nest,java,spring,mongo,mysql,python,flask,figma,tailwind,redux,express,aws,svelte,bootstrap,laravel,nodejs,cpp&theme=dark&perline=8" /><br/>
 </div>
  
  <p align="center" style="display:flex;align-items:center;justify-content:center;gap:20px !important;flex-wrap:wrap;margin-bottom:20px !important;"> 
