@@ -1,9 +1,5 @@
 ![Banner](banner1.png)
 
-<!--## Projects
-- [Blockchain](https://hannie404.github.io/blockchain/): This project aims to provide an understanding of the potential of blockchain and NFTs, showcasing the myriad of opportunities they present for innovation, decentralization, and democratization across sectors. By exploring real-world examples and emerging trends, this project seeks to inspire and educate readers.
--->
-
 <!--<a href="https://annie-dev.netlify.app/">
 <img src="https://img.icons8.com/nolan/64/github.png" alt="My Portfolio" />
 </a>-->
