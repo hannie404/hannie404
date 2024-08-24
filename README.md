@@ -22,14 +22,6 @@
             <br />
 
 [![](https://visitcount.itsvg.in/api?id=Hannie404&icon=0&color=0)](https://visitcount.itsvg.in)
-
- <!--<div style="display:flex;">
- <img src="https://komarev.com/ghpvc/?username=hannie404" />
-  <a href="https://commits.top/philippines.html" target="_blank">
-<img src="https://en5jrhdk1emb4po.m.pipedream.net">
- </div>
- </a>
- </div>-->
  
 <div align='center'>
 	<h3>My Current Skillset 🚀</h3> 
