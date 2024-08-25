@@ -30,8 +30,6 @@
  
  <p align="center" style="display:flex;align-items:center;justify-content:center;gap:20px !important;flex-wrap:wrap;margin-bottom:20px !important;"> 
 
- <!--<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=hannie404&theme=tokyonight" />
- <img src="https://github-readme-streak-stats.herokuapp.com/?user=hannie404&theme=radical&hide" />-->
 </p>
 <br/>
 <div align='center'>
