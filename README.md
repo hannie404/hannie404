@@ -1,8 +1,8 @@
 ![Banner](banner1.png)
 
-<!--<a href="https://annie-dev.netlify.app/">
-<img src="https://img.icons8.com/nolan/64/github.png" alt="My Portfolio" />
-</a>-->
+
+<!--<img src="https://img.icons8.com/nolan/64/github.png" alt="My Portfolio" />
+-->
 
  <div align="center">
   <h3>About Me 🎖️</h3>
