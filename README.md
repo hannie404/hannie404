@@ -37,8 +37,10 @@
 <p align="center" style="display:flex;align-items:center;justify-content:center;gap:20px !important;flex-wrap:wrap;margin-bottom:20px !important;"> 
   
 ![](https://github-readme-streak-stats.herokuapp.com/?user=Hannie404&theme=radical&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=Hannie404&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
+<!--
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=Hannie404&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+-->
 </p>
 
 <h3>My Trophies 🏆</h3>
