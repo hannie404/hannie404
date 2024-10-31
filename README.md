@@ -12,7 +12,7 @@
 <img src="https://skillicons.dev/icons?i=gmail&theme=dark" ></a>
 <a href="https://www.linkedin.com/in/annie-neshreen-dev" target="_blank">
 <img src="https://skillicons.dev/icons?i=linkedin&theme=dark" ></a>
-<a href="https://www.instagram.com/annie_nesh/" target="_blank">
+<a href="https://www.instagram.com/annie_nesh/" target="_blank"> 
 <img src="https://skillicons.dev/icons?i=instagram&theme=dark" ></a>
 
  </p>
