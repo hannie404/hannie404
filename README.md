@@ -4,7 +4,7 @@
 --> 
   
  <div align="center">   
-  <h3>About Me 🎖️</h3>
+  <h3>About Me 🎖️</h3> 
 
 <a href="https://annie-dev.netlify.app/" target="_blank"> 
 <img src="https://skillicons.dev/icons?i=azure&theme=dark" ></a>
