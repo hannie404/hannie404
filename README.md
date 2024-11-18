@@ -13,7 +13,7 @@
 <a href="https://www.linkedin.com/in/annie-neshreen-dev" target="_blank">
 <img src="https://skillicons.dev/icons?i=linkedin&theme=dark" ></a>
 <a href="https://www.instagram.com/annie_nesh/" target="_blank"> 
-<img src="https://skillicons.dev/icons?i=instagram&theme=dark" ></a>
+<img src="https://skillicons.dev/icons?i=instagram&theme=dark" ></a>  
 
  </p>
  <img src="https://readme-typing-svg.herokuapp.com?color=white&lines=I'm+Annie+Neshreen+Ibrahim;A+Software+Engineer;An+Open+Source+Contributor;A+Proactive+Learner" />
