@@ -7,7 +7,7 @@
   <h3>About Me 🎖️</h3>
     
 <a href="https://annie-dev.netlify.app/" target="_blank">     
-<img src="https://skillicons.dev/icons?i=azure&theme=dark" ></a>
+<img src="https://skillicons.dev/icons?i=azure&theme=dark" ></a> 
 <a emailto="annie.business04@gmail.com" target="_blank">        
 <img src="https://skillicons.dev/icons?i=gmail&theme=dark" ></a>
 <a href="https://www.linkedin.com/in/annie-neshreen-dev" target="_blank">
