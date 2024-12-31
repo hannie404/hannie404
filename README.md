@@ -1,7 +1,11 @@
 ![Banner](banner1.png)
   
 <!--<img src="https://img.icons8.com/nolan/64/github.png" alt="My Portfolio" />  
+
+New year
 -->   
+
+
   
  <div align="center">   
   <h3>About Me 🎖️</h3> 
