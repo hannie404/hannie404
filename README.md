@@ -2,8 +2,7 @@
   
 <!--<img src="https://img.icons8.com/nolan/64/github.png" alt="My Portfolio" />  
 
-1st skipped haha
--->   
+-->
 
 
   
