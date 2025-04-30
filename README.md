@@ -4,8 +4,7 @@
   missed
 -->
 
-
-  
+<!--
  <div align="center">   
   <h3>About Me 🎖️</h3> 
     
@@ -17,14 +16,14 @@
 <img src="https://skillicons.dev/icons?i=linkedin&theme=dark" ></a>
 <a href="https://www.instagram.com/annie_nesh/" target="_blank"> 
 <img src="https://skillicons.dev/icons?i=instagram&theme=dark" ></a>  
-
+-->
  </p>
  <img src="https://readme-typing-svg.herokuapp.com?color=white&lines=I'm+Annie+Neshreen+Ibrahim;A+Software+Engineer;An+Open+Source+Contributor;A+Proactive+Learner" />
             <p > I am highly passionate about learning different programming languages, technologies, and skills that I can use for my work and projects. I have an experience in freelancing particularly in web development and data science and still learning things to grow in the tech industry.</p>
             <br />
 
 [![](https://visitcount.itsvg.in/api?id=Hannie404&icon=0&color=0)](https://visitcount.itsvg.in)
- 
+<!--
 <div align='center'>
 	<h3>My Current Skillset 🚀</h3> 
 	<img src="https://skillicons.dev/icons?i=html,css,js,ts,react,vue,next,nest,java,spring,mongo,mysql,python,flask,figma,tailwind,redux,express,aws,svelte,bootstrap,laravel,nodejs,cpp&theme=dark&perline=8" /><br/>
@@ -34,6 +33,7 @@
 
 </p>
 <br/>
+-->
 <!--
 <div align='center'>
 <h3>My Github Stats 📊</h3>
