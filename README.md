@@ -18,11 +18,14 @@
 <img src="https://skillicons.dev/icons?i=instagram&theme=dark" ></a>  
 -->
  </p>
+  <!--   
  <img src="https://readme-typing-svg.herokuapp.com?color=white&lines=I'm+Annie+Neshreen+Ibrahim;A+Software+Engineer;An+Open+Source+Contributor;A+Proactive+Learner" />
-            <p > I am highly passionate about learning different programming languages, technologies, and skills that I can use for my work and projects. I have an experience in freelancing particularly in web development and data science and still learning things to grow in the tech industry.</p>
+        <p > I am highly passionate about learning different programming languages, technologies, and skills that I can use for my work and projects. I have an experience in freelancing particularly in web development and data science and still learning things to grow in the tech industry.</p>
             <br />
+-->
 
 [![](https://visitcount.itsvg.in/api?id=Hannie404&icon=0&color=0)](https://visitcount.itsvg.in)
+
 <!--
 <div align='center'>
 	<h3>My Current Skillset 🚀</h3> 
