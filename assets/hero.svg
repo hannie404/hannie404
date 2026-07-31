@@ -1,0 +1,292 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-label="Annie Neshreen — Software Engineer, Philippines">
+  <title>Annie Neshreen — Software Engineer</title>
+
+  <!--
+    ┌─────────────────────────────────────────────────────────────┐
+    │  IDENTITY PLATE — anneshreen profile README                 │
+    │                                                             │
+    │  Hand-authored. Motion is additive only: the static         │
+    │  composition is complete without it, and                    │
+    │  prefers-reduced-motion turns every animation off.          │
+    │                                                             │
+    │  PALETTE  bg #070a0e · ink #e8f0f6 · dim #75899a            │
+    │           accent #7FFFD4 · grid #10202b/#17303f             │
+    │  Bump "REV 2026.08" in the title block on revision.         │
+    └─────────────────────────────────────────────────────────────┘
+  -->
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .sans { font-family: "Helvetica Neue", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+
+    .rise  { animation: rise 1s cubic-bezier(.2,.75,.2,1) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: none } }
+
+    .slide { animation: slide 1.15s cubic-bezier(.16,.9,.2,1) both; }
+    @keyframes slide { from { opacity: 0; transform: translateX(-26px) } to { opacity: 1; transform: none } }
+
+    .d1 { animation-delay: .05s } .d2 { animation-delay: .30s } .d3 { animation-delay: .50s }
+    .d4 { animation-delay: .70s } .d5 { animation-delay: .90s } .d6 { animation-delay: 1.1s }
+
+    @keyframes blink { 0%,50% { opacity: 1 } 50.01%,100% { opacity: 0 } }
+
+    /*  TYPEWRITER LOOP — one line, five titles, 22s cycle
+     *
+     *  Each title owns a clip rect that widens then narrows in character-sized
+     *  steps, so glyphs are keyed in and backspaced out one at a time. All five
+     *  share the 22s clock and take turns; steps(n) MUST equal the character
+     *  count and the phrase's textLength MUST be 20.706 × n, which keeps every
+     *  title on the same 20.7px/char cadence the caret track assumes.
+     *
+     *    TITLE                  CHARS  WIDTH   TYPE    HOLD    ERASE    WINDOW
+     *    SOFTWARE ENGINEER       17     352   1.50s   4.00s   0.70s      0 – 28.18%
+     *    FULL-STACK DEVELOPER    20     414   1.60s   2.00s   0.80s  28.18 – 48.18%
+     *    AI ENGINEER             11     228   1.00s   2.00s   0.50s  48.18 – 64.09%
+     *    FINANCIAL CONSULTANT    20     414   1.45s   2.00s   0.70s  64.09 – 82.95%
+     *    UI/UX DESIGNER          14     290   1.15s   2.00s   0.60s  82.95 – 100%
+     *
+     *  SOFTWARE ENGINEER is the anchor: it holds 4s, the rest 2s each. To add or
+     *  re-word a title, redo the table (1s = 4.5454% of the cycle), then update
+     *  its keyframes, steps(n), textLength, clip width and caret stop together.
+     *
+     *  All five start 1s in: the name and email have landed and the title block
+     *  is still rising, so the first keystroke overlaps the tail of the entrance
+     *  on purpose. Until then only the caret sits blinking at the line start.
+     *  The delay applies to the first pass only; the loop runs unbroken after.
+     *
+     *  Every title holds a static scaleX(0) for that pre-roll, which doubles as
+     *  the no-animation fallback: reduced motion re-opens .cyc1 below, so a
+     *  still render shows the anchor alone — never five titles stacked.
+     */
+    .cyc { transform-origin: 64px 0; transform: scaleX(0) }
+    .cyc1 { animation: cyc1 22s steps(17,start) infinite 1s }
+    .cyc2 { animation: cyc2 22s steps(20,start) infinite 1s }
+    .cyc3 { animation: cyc3 22s steps(11,start) infinite 1s }
+    .cyc4 { animation: cyc4 22s steps(20,start) infinite 1s }
+    .cyc5 { animation: cyc5 22s steps(14,start) infinite 1s }
+    @keyframes cyc1 { 0%     { transform: scaleX(0) }  6.82% { transform: scaleX(1) }    25% { transform: scaleX(1) } 28.18% { transform: scaleX(0) } 100% { transform: scaleX(0) } }
+    @keyframes cyc2 { 28.18% { transform: scaleX(0) } 35.45% { transform: scaleX(1) } 44.55% { transform: scaleX(1) } 48.18% { transform: scaleX(0) } }
+    @keyframes cyc3 { 48.18% { transform: scaleX(0) } 52.73% { transform: scaleX(1) } 61.82% { transform: scaleX(1) } 64.09% { transform: scaleX(0) } }
+    @keyframes cyc4 { 64.09% { transform: scaleX(0) } 70.68% { transform: scaleX(1) } 79.77% { transform: scaleX(1) } 82.95% { transform: scaleX(0) } }
+    @keyframes cyc5 { 82.95% { transform: scaleX(0) } 88.18% { transform: scaleX(1) } 97.27% { transform: scaleX(1) }   100% { transform: scaleX(0) } }
+
+    /* caret rides the same clock — per-keyframe steps() so it lands on each
+       title's character grid, holds while the title rests, then walks back.
+       It parks at the line start and blinks through the 1s pre-roll. */
+    .caret { animation: walk 22s infinite 1s, blink 1.08s steps(1) infinite }
+    @keyframes walk {
+      0%     { transform: translateX(0);     animation-timing-function: steps(17,start) }
+      6.82%  { transform: translateX(352px); animation-timing-function: steps(1) }
+      25%    { transform: translateX(352px); animation-timing-function: steps(17,start) }
+      28.18% { transform: translateX(0);     animation-timing-function: steps(20,start) }
+      35.45% { transform: translateX(414px); animation-timing-function: steps(1) }
+      44.55% { transform: translateX(414px); animation-timing-function: steps(20,start) }
+      48.18% { transform: translateX(0);     animation-timing-function: steps(11,start) }
+      52.73% { transform: translateX(228px); animation-timing-function: steps(1) }
+      61.82% { transform: translateX(228px); animation-timing-function: steps(11,start) }
+      64.09% { transform: translateX(0);     animation-timing-function: steps(20,start) }
+      70.68% { transform: translateX(414px); animation-timing-function: steps(1) }
+      79.77% { transform: translateX(414px); animation-timing-function: steps(20,start) }
+      82.95% { transform: translateX(0);     animation-timing-function: steps(14,start) }
+      88.18% { transform: translateX(290px); animation-timing-function: steps(1) }
+      97.27% { transform: translateX(290px); animation-timing-function: steps(14,start) }
+      100%   { transform: translateX(0) }
+    }
+
+    .halo { transform-box: fill-box; transform-origin: center; animation: halo 3.4s ease-in-out infinite; }
+    @keyframes halo { 0%,100% { transform: scale(1); opacity: .28 } 50% { transform: scale(1.6); opacity: .04 } }
+
+    .beam { animation: beam 9s cubic-bezier(.55,0,.45,1) infinite; }
+    @keyframes beam { 0% { transform: translateX(0); opacity: 0 } 10%,88% { opacity: .5 } 100% { transform: translateX(1170px); opacity: 0 } }
+
+    .ring-a { animation: spin 19s linear infinite; }
+    .ring-b { animation: spin 27s linear infinite reverse; }
+    .ring-c { animation: spin 36s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg) } }
+    .ring-a, .ring-b, .ring-c { transform-origin: 944px 188px; }
+
+    /*  ELECTRONS — each dot walks its own ellipse instead of sitting on it
+     *
+     *  The track below is the UNROTATED orbit: 36 samples of
+     *  (944 + 112·cos t, 188 + 38·sin t), the same rx/ry the ellipses are drawn
+     *  with. Each dot lives in a group carrying its ring's rotate(θ), so one
+     *  shared track serves all three planes — and because the dot only ever
+     *  translates, it stays perfectly round in every plane. 36 samples put the
+     *  chord no more than 0.43px inside the drawn ellipse: invisible at r≤4.5.
+     *
+     *  The ring's own spin still applies on top, so an electron traces its
+     *  ellipse while the whole shell precesses. Base transform = the 0% sample,
+     *  so a still render parks each dot on its orbit rather than at (0,0).
+     */
+    .orb   { transform: translate(1056px, 188px) }
+    .orb-a { animation: orbit 6s   linear infinite -1.5s }
+    .orb-b { animation: orbit 8s   linear infinite reverse -4s }
+    .orb-c { animation: orbit 10.5s linear infinite -7s }
+    @keyframes orbit {
+      0%{transform:translate(1056.00px,188.00px)} 2.778%{transform:translate(1054.30px,194.60px)} 5.556%{transform:translate(1049.25px,201.00px)}
+      8.333%{transform:translate(1040.99px,207.00px)} 11.111%{transform:translate(1029.80px,212.43px)} 13.889%{transform:translate(1015.99px,217.11px)}
+      16.667%{transform:translate(1000.00px,220.91px)} 19.444%{transform:translate(982.31px,223.71px)} 22.222%{transform:translate(963.45px,225.42px)}
+      25%{transform:translate(944.00px,226.00px)} 27.778%{transform:translate(924.55px,225.42px)} 30.556%{transform:translate(905.69px,223.71px)}
+      33.333%{transform:translate(888.00px,220.91px)} 36.111%{transform:translate(872.01px,217.11px)} 38.889%{transform:translate(858.20px,212.43px)}
+      41.667%{transform:translate(847.01px,207.00px)} 44.444%{transform:translate(838.75px,201.00px)} 47.222%{transform:translate(833.70px,194.60px)}
+      50%{transform:translate(832.00px,188.00px)} 52.778%{transform:translate(833.70px,181.40px)} 55.556%{transform:translate(838.75px,175.00px)}
+      58.333%{transform:translate(847.01px,169.00px)} 61.111%{transform:translate(858.20px,163.57px)} 63.889%{transform:translate(872.01px,158.89px)}
+      66.667%{transform:translate(888.00px,155.09px)} 69.444%{transform:translate(905.69px,152.29px)} 72.222%{transform:translate(924.55px,150.58px)}
+      75%{transform:translate(944.00px,150.00px)} 77.778%{transform:translate(963.45px,150.58px)} 80.556%{transform:translate(982.31px,152.29px)}
+      83.333%{transform:translate(1000.00px,155.09px)} 86.111%{transform:translate(1015.99px,158.89px)} 88.889%{transform:translate(1029.80px,163.57px)}
+      91.667%{transform:translate(1040.99px,169.00px)} 94.444%{transform:translate(1049.25px,175.00px)} 97.222%{transform:translate(1054.30px,181.40px)}
+      100%{transform:translate(1056.00px,188.00px)}
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rise, .slide { animation: none; opacity: 1; transform: none }
+      /* rings keep their .85/.5/.28 depth — only the spin stops */
+      .halo, .ring-a, .ring-b, .ring-c { animation: none; transform: none }
+      /* cycle stops on the anchor title; 2–5 keep their static scaleX(0),
+         and the caret parks at the end of it */
+      .cyc1, .cyc2, .cyc3, .cyc4, .cyc5, .caret { animation: none }
+      .cyc1 { transform: none }
+      .caret { transform: translateX(352px) }
+      /* electrons keep their base translate — parked on the orbit, not at 0,0 */
+      .orb { animation: none }
+      .halo { opacity: .22 }
+      .beam { display: none }
+    }
+  </style>
+
+  <defs>
+    <pattern id="minor" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0V20M0 20H20" stroke="#10202b" stroke-width="1"/>
+    </pattern>
+    <pattern id="major" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M100 0V100M0 100H100" stroke="#17303f" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="fade" cx="32%" cy="44%" r="80%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".95"/>
+      <stop offset="60%" stop-color="#fff" stop-opacity=".38"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMask"><rect width="1200" height="420" fill="url(#fade)"/></mask>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7FFFD4" stop-opacity=".17"/>
+      <stop offset="100%" stop-color="#7FFFD4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beamGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7FFFD4" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#7FFFD4" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#7FFFD4" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="frame"><rect x="1" y="1" width="1198" height="418" rx="18"/></clipPath>
+
+    <!-- typewriter reveals: one clip per title, width == that title's textLength + 4 -->
+    <clipPath id="cyc1"><rect class="cyc cyc1" x="64" y="258" width="356" height="32"/></clipPath>
+    <clipPath id="cyc2"><rect class="cyc cyc2" x="64" y="258" width="418" height="32"/></clipPath>
+    <clipPath id="cyc3"><rect class="cyc cyc3" x="64" y="258" width="232" height="32"/></clipPath>
+    <clipPath id="cyc4"><rect class="cyc cyc4" x="64" y="258" width="418" height="32"/></clipPath>
+    <clipPath id="cyc5"><rect class="cyc cyc5" x="64" y="258" width="294" height="32"/></clipPath>
+  </defs>
+
+  <!-- ══ SHEET ════════════════════════════════════════════ -->
+  <rect width="1200" height="420" rx="18" fill="#070a0e"/>
+  <g clip-path="url(#frame)">
+    <g mask="url(#gridMask)">
+      <rect width="1200" height="420" fill="url(#minor)"/>
+      <rect width="1200" height="420" fill="url(#major)"/>
+    </g>
+    <ellipse cx="944" cy="188" rx="235" ry="192" fill="url(#glow)"/>
+    <rect class="beam" x="0" y="1" width="2" height="418" fill="url(#beamGrad)" opacity="0"/>
+  </g>
+  <rect x="1" y="1" width="1198" height="418" rx="18" fill="none" stroke="#1e3646"/>
+
+  <!-- ══ RULERS ═══════════════════════════════════════════ -->
+  <g stroke="#17303f" fill="none" stroke-width="1">
+    <path d="M100 1v9M200 1v6M300 1v9M400 1v6M500 1v9M600 1v6M700 1v9M800 1v6M900 1v9M1000 1v6M1100 1v9"/>
+    <path d="M1 100h9M1 200h6M1 300h9"/>
+    <path d="M100 419v-9M300 419v-9M500 419v-9M700 419v-9M900 419v-9M1100 419v-9"/>
+  </g>
+
+  <!-- ══ REGISTRATION MARKS ═══════════════════════════════ -->
+  <path d="M22 44V22h22M1156 22h22v22M1178 376v22h-22M44 398H22v-22"
+        fill="none" stroke="#7FFFD4" stroke-width="1.4" opacity=".5"/>
+
+  <!-- ══ IDENTITY BLOCK ═══════════════════════════════════ -->
+  <g class="rise d1">
+    <rect x="64" y="92" width="7" height="7" fill="#7FFFD4"/>
+    <text x="82" y="99" class="mono" font-size="11" letter-spacing="4.5" fill="#7FFFD4">PROFILE · 001</text>
+    <text x="612" y="99" class="mono" font-size="11" letter-spacing="4.5" fill="#75899a" text-anchor="end" opacity=".8">SHEET 01 / 02</text>
+  </g>
+
+  <g class="slide d2">
+    <text x="64" y="176" class="sans" font-size="62" font-weight="700" fill="#e8f0f6"
+          textLength="577" lengthAdjust="spacing">ANNIE NESHREEN</text>
+  </g>
+
+  <!-- dimension line -->
+  <g class="rise d3">
+    <path d="M64 204v14M641 204v14M64 211h577" fill="none" stroke="#75899a" stroke-width="1" opacity=".75"/>
+    <path d="M64 211l9-3.4v6.8zM641 211l-9-3.4v6.8z" fill="#75899a" opacity=".75"/>
+    <rect x="252" y="200" width="202" height="22" fill="#070a0e"/>
+    <text x="353" y="215" class="mono" font-size="10.5" letter-spacing="2" fill="#e8f0f6" text-anchor="middle" opacity=".85">me@dev-annie.vercel.com</text>
+  </g>
+
+  <!-- ══ TITLE CYCLE ══════════════════════════════════════
+       Five titles keyed into the same line on a 20s loop. Baseline sits at 280
+       — the optical centre of the band between the email rule and the title
+       block. See the TYPEWRITER LOOP note in <style> before changing copy:
+       textLength, steps(n) and the caret track all have to move together. -->
+  <g class="mono" font-size="19" letter-spacing="7.5" fill="#e8f0f6" opacity=".9">
+    <g clip-path="url(#cyc1)"><text x="64" y="280" textLength="352" lengthAdjust="spacing">SOFTWARE ENGINEER</text></g>
+    <g clip-path="url(#cyc2)"><text x="64" y="280" textLength="414" lengthAdjust="spacing">FULL-STACK DEVELOPER</text></g>
+    <g clip-path="url(#cyc3)"><text x="64" y="280" textLength="228" lengthAdjust="spacing">AI ENGINEER</text></g>
+    <g clip-path="url(#cyc4)"><text x="64" y="280" textLength="414" lengthAdjust="spacing">FINANCIAL CONSULTANT</text></g>
+    <g clip-path="url(#cyc5)"><text x="64" y="280" textLength="290" lengthAdjust="spacing">UI/UX DESIGNER</text></g>
+  </g>
+  <rect class="caret" x="76" y="263" width="11" height="20" fill="#7FFFD4"/>
+
+  <!-- ══ FIG. 01 — CORE LOOP ══════════════════════════════ -->
+  <g fill="none" stroke="#7FFFD4" stroke-width="1.25">
+    <g class="ring-a" opacity=".85">
+      <ellipse cx="944" cy="188" rx="112" ry="38" transform="rotate(-24 944 188)"/>
+      <g transform="rotate(-24 944 188)"><circle class="orb orb-a" r="4.5" fill="#7FFFD4" stroke="none"/></g>
+    </g>
+    <g class="ring-b" opacity=".5">
+      <ellipse cx="944" cy="188" rx="112" ry="38" transform="rotate(46 944 188)"/>
+      <g transform="rotate(46 944 188)"><circle class="orb orb-b" r="3.5" fill="#7FFFD4" stroke="none"/></g>
+    </g>
+    <g class="ring-c" opacity=".28">
+      <ellipse cx="944" cy="188" rx="112" ry="38" transform="rotate(104 944 188)"/>
+      <g transform="rotate(104 944 188)"><circle class="orb orb-c" r="3" fill="#7FFFD4" stroke="none"/></g>
+    </g>
+  </g>
+  <circle class="halo" cx="944" cy="188" r="17" fill="#7FFFD4" opacity=".22"/>
+  <circle cx="944" cy="188" r="6.5" fill="#7FFFD4"/>
+
+  <g class="rise d6">
+    <path d="M986 132l32-28h108" fill="none" stroke="#75899a" stroke-width="1" opacity=".6"/>
+    <circle cx="986" cy="132" r="2" fill="#75899a"/>
+    <text x="1126" y="100" class="mono" font-size="10" letter-spacing="2.4" fill="#75899a" text-anchor="end">FIG. 01 — CORE LOOP</text>
+  </g>
+
+  <!-- ══ TITLE BLOCK ══════════════════════════════════════ -->
+  <g class="rise d6">
+    <path d="M32 336h1136" stroke="#1e3646" stroke-width="1"/>
+    <path d="M32 336h520" stroke="#7FFFD4" stroke-width="1.6"/>
+    <g stroke="#1e3646" stroke-width="1" opacity=".85">
+      <path d="M259 346v40M486 346v40M714 346v40M941 346v40"/>
+    </g>
+    <g class="mono" font-size="8.5" letter-spacing="2.6" fill="#75899a" opacity=".85">
+      <text x="32" y="360">SITE</text>
+      <text x="264" y="360">EXPERIENCE</text>
+      <text x="491" y="360">LOCATION</text>
+      <text x="719" y="360">ZONE</text>
+      <text x="946" y="360">REVISION</text>
+    </g>
+    <g class="mono" font-size="12" letter-spacing="1.1" fill="#e8f0f6" opacity=".92">
+      <text x="32" y="381">DEV-ANNIE.VERCEL.COM</text>
+      <text x="264" y="381">SINCE 2021</text>
+      <text x="491" y="381">PHILIPPINES</text>
+      <text x="719" y="381">UTC+08:00</text>
+      <text x="946" y="381" fill="#7FFFD4">2026.08</text>
+    </g>
+  </g>
+</svg>
