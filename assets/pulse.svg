@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 110" width="1200" height="110" role="img" aria-label="Live signal divider">
+  <title>Signal — 72 BPM</title>
+
+  <!--
+    ┌─────────────────────────────────────────────────────────────┐
+    │  SIGNAL STRIP — divider between sheets 01 and 02             │
+    │                                                             │
+    │  Same plate language as hero.svg: #070a0e ground, 20/100    │
+    │  grid, aquamarine #7FFFD4 accent, mono labels, corner marks.│
+    │                                                             │
+    │  The trace is a real 3-beat ECG (P wave · QRS · T wave) but  │
+    │  nothing of it is drawn at rest — only the live 170px comet  │
+    │  and the head dot riding the exact path are ever visible.   │
+    │  Beat amplitude is held to 62% so the R spike and the head's │
+    │  glow both clear the frame — 26px of air above, 37px below.  │
+    │  Sweep = 2.5s for 3 beats = 72 BPM, matching the label.     │
+    │  Path length 1156px — dasharray and the ride track below     │
+    │  are both generated from it, so head and comet stay locked. │
+    └─────────────────────────────────────────────────────────────┘
+  -->
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+
+    /* comet: a 170px lit window travelling the trace, head-first */
+    .live { stroke-dasharray: 170 1156; animation: draw 2.5s linear infinite, hot 2.5s linear infinite }
+    @keyframes draw { from { stroke-dashoffset: 170 } to { stroke-dashoffset: -986 } }
+    /* blink off across the wrap so the reset never pops */
+    @keyframes hot { 0% { opacity: 0 } 3%,96% { opacity: 1 } 100% { opacity: 0 } }
+
+    /* head rides the path itself: every vertex plus fill so no chord
+       exceeds 18px, keyed by arc length so it tracks the comet exactly */
+    .head { transform: translate(152px, 55px); animation: ride 2.5s linear infinite, hot 2.5s linear infinite }
+    @keyframes ride {
+      0%{transform:translate(152.0px,55.0px)} 5.361%{transform:translate(214.0px,55.0px)} 6.98%{transform:translate(232.2px,51.0px)} 8.612%{transform:translate(250.8px,53.6px)}
+      8.995%{transform:translate(255.0px,55.0px)} 10.724%{transform:translate(275.0px,55.0px)} 11.71%{transform:translate(284.0px,62.0px)} 14.91%{transform:translate(296.0px,27.0px)}
+      18.937%{transform:translate(308.0px,72.0px)} 20.788%{transform:translate(321.0px,55.0px)} 23.296%{transform:translate(350.0px,55.0px)} 24.945%{transform:translate(368.1px,49.1px)}
+      26.531%{transform:translate(386.4px,48.3px)} 28.172%{transform:translate(404.8px,52.5px)} 28.75%{transform:translate(411.0px,55.0px)} 33.333%{transform:translate(464.0px,55.0px)}
+      38.695%{transform:translate(526.0px,55.0px)} 40.314%{transform:translate(544.2px,51.0px)} 41.945%{transform:translate(562.8px,53.6px)} 42.328%{transform:translate(567.0px,55.0px)}
+      44.058%{transform:translate(587.0px,55.0px)} 45.044%{transform:translate(596.0px,62.0px)} 48.243%{transform:translate(608.0px,27.0px)} 52.271%{transform:translate(620.0px,72.0px)}
+      54.121%{transform:translate(633.0px,55.0px)} 56.629%{transform:translate(662.0px,55.0px)} 58.278%{transform:translate(680.1px,49.1px)} 59.865%{transform:translate(698.4px,48.3px)}
+      61.505%{transform:translate(716.8px,52.5px)} 62.084%{transform:translate(723.0px,55.0px)} 66.667%{transform:translate(776.0px,55.0px)} 72.028%{transform:translate(838.0px,55.0px)}
+      73.647%{transform:translate(856.2px,51.0px)} 75.278%{transform:translate(874.8px,53.6px)} 75.662%{transform:translate(879.0px,55.0px)} 77.391%{transform:translate(899.0px,55.0px)}
+      78.377%{transform:translate(908.0px,62.0px)} 81.577%{transform:translate(920.0px,27.0px)} 85.604%{transform:translate(932.0px,72.0px)} 87.454%{transform:translate(945.0px,55.0px)}
+      89.962%{transform:translate(974.0px,55.0px)} 91.612%{transform:translate(992.1px,49.1px)} 93.198%{transform:translate(1010.4px,48.3px)} 94.839%{transform:translate(1028.8px,52.5px)}
+      95.417%{transform:translate(1035.0px,55.0px)} 100%{transform:translate(1088.0px,55.0px)}
+    }
+
+    .led { animation: blink 2.5s steps(1) infinite }
+    @keyframes blink { 0%,42% { opacity: 1 } 42.01%,100% { opacity: .25 } }
+
+    @media (prefers-reduced-motion: reduce) {
+      /* no sweep to show, so the otherwise-hidden trace stands in */
+      .live, .head { display: none }
+      .dim { opacity: .45 }
+      .led { animation: none }
+    }
+  </style>
+
+  <defs>
+    <pattern id="pMinor" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0V20M0 20H20" stroke="#10202b" stroke-width="1"/>
+    </pattern>
+    <pattern id="pMajor" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M100 0V100M0 100H100" stroke="#17303f" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pFade" cx="34%" cy="50%" r="78%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".9"/>
+      <stop offset="58%" stop-color="#fff" stop-opacity=".34"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="pGrid"><rect width="1200" height="110" fill="url(#pFade)"/></mask>
+    <radialGradient id="pGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7FFFD4" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#7FFFD4" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="pFrame"><rect x="1" y="1" width="1198" height="108" rx="18"/></clipPath>
+  </defs>
+
+  <!-- ══ SHEET ════════════════════════════════════════════ -->
+  <rect width="1200" height="110" rx="18" fill="#070a0e"/>
+  <g clip-path="url(#pFrame)" mask="url(#pGrid)">
+    <rect width="1200" height="110" fill="url(#pMinor)"/>
+    <rect width="1200" height="110" fill="url(#pMajor)"/>
+  </g>
+  <rect x="1" y="1" width="1198" height="108" rx="18" fill="none" stroke="#1e3646"/>
+
+  <!-- ══ RULERS ═══════════════════════════════════════════ -->
+  <g stroke="#17303f" fill="none" stroke-width="1">
+    <path d="M100 1v7M200 1v4M300 1v7M400 1v4M500 1v7M600 1v4M700 1v7M800 1v4M900 1v7M1000 1v4M1100 1v7"/>
+    <path d="M100 109v-7M300 109v-7M500 109v-7M700 109v-7M900 109v-7M1100 109v-7"/>
+  </g>
+
+  <!-- ══ REGISTRATION MARKS ═══════════════════════════════ -->
+  <path d="M20 34V20h14M1166 20h14v14M1180 76v14h-14M34 90H20V76"
+        fill="none" stroke="#7FFFD4" stroke-width="1.4" opacity=".5"/>
+
+  <!-- ══ LABELS ═══════════════════════════════════════════ -->
+  <rect class="led" x="32" y="51" width="7" height="7" fill="#7FFFD4"/>
+  <text x="50" y="59" class="mono" font-size="9.5" letter-spacing="3.4" fill="#7FFFD4">SIGNAL</text>
+  <text x="1168" y="59" class="mono" font-size="9.5" letter-spacing="3.4" fill="#75899a"
+        text-anchor="end" opacity=".8">72 BPM</text>
+
+  <!-- ══ TRACE ════════════════════════════════════════════ -->
+  <g fill="none" stroke="#7FFFD4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- hidden at rest; revealed only for prefers-reduced-motion -->
+    <path class="dim" d="M152 55L214 55Q234 47 255 55L275 55L284 62L296 27L308 72L321 55L350 55Q380 41 411 55L464 55L526 55Q546 47 567 55L587 55L596 62L608 27L620 72L633 55L662 55Q692 41 723 55L776 55L838 55Q858 47 879 55L899 55L908 62L920 27L932 72L945 55L974 55Q1004 41 1035 55L1088 55" stroke-width="1.4" opacity="0"/>
+    <path class="live" d="M152 55L214 55Q234 47 255 55L275 55L284 62L296 27L308 72L321 55L350 55Q380 41 411 55L464 55L526 55Q546 47 567 55L587 55L596 62L608 27L620 72L633 55L662 55Q692 41 723 55L776 55L838 55Q858 47 879 55L899 55L908 62L920 27L932 72L945 55L974 55Q1004 41 1035 55L1088 55" stroke-width="1.8"/>
+  </g>
+  <g class="head">
+    <circle r="16" fill="url(#pGlow)"/>
+    <circle r="3.2" fill="#7FFFD4"/>
+  </g>
+</svg>
