@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 72" width="1200" height="72" role="img" aria-label="Socials — @hannie404 on Instagram, Threads, LinkedIn and YouTube">
+  <title>@hannie404 — Instagram · Threads · LinkedIn · YouTube</title>
+
+  <!--
+    ┌─────────────────────────────────────────────────────────────┐
+    │  SOCIAL STRIP — 72px, the shortest plate in the set          │
+    │                                                             │
+    │  One handle across every channel, so the handle is written   │
+    │  once and the icons carry the difference.                    │
+    │                                                             │
+    │  The marks are drawn here, not imported: every one is a      │
+    │  20×20 box on the plate's own 1.4px cyan stroke, so they sit │
+    │  in the same line weight as the grid, rulers and corner      │
+    │  marks. No brand fills, no drop-in logo set — nothing that   │
+    │  would read as pasted in from somewhere else. LinkedIn's     │
+    │  "in" is set in the sheet's own mono face for the same       │
+    │  reason. Names are spelled out on the right so the glyphs    │
+    │  never have to be guessed at.                                │
+    │                                                             │
+    │  Icons pip left to right on the 2.5s clock pulse.svg beats   │
+    │  at — same rhythm, separate file, so they cannot be frame-   │
+    │  locked; the echo is deliberate, not a sync.                 │
+    └─────────────────────────────────────────────────────────────┘
+  -->
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+
+    /* each mark brightens as the ripple reaches it, then settles back */
+    .ic { opacity: .5; animation: pip 2.5s cubic-bezier(.15,.75,.3,1) infinite }
+    @keyframes pip { 0% { opacity: 1 } 16% { opacity: .5 } 100% { opacity: .5 } }
+    .ic2 { animation-delay: .10s } .ic3 { animation-delay: .20s } .ic4 { animation-delay: .30s }
+
+    .led { animation: blink 2.5s steps(1) infinite }
+    @keyframes blink { 0%,42% { opacity: 1 } 42.01%,100% { opacity: .25 } }
+
+    @media (prefers-reduced-motion: reduce) {
+      /* no ripple: every mark rests evenly lit */
+      .ic { animation: none; opacity: .85 }
+      .led { animation: none }
+    }
+  </style>
+
+  <defs>
+    <pattern id="oMinor" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0V20M0 20H20" stroke="#10202b" stroke-width="1"/>
+    </pattern>
+    <pattern id="oMajor" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M100 0V100M0 100H100" stroke="#17303f" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="oFade" cx="26%" cy="50%" r="76%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".9"/>
+      <stop offset="58%" stop-color="#fff" stop-opacity=".32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="oGrid"><rect width="1200" height="72" fill="url(#oFade)"/></mask>
+    <clipPath id="oFrame"><rect x="1" y="1" width="1198" height="70" rx="18"/></clipPath>
+  </defs>
+
+  <!-- ══ SHEET ════════════════════════════════════════════ -->
+  <rect width="1200" height="72" rx="18" fill="#070a0e"/>
+  <g clip-path="url(#oFrame)" mask="url(#oGrid)">
+    <rect width="1200" height="72" fill="url(#oMinor)"/>
+    <rect width="1200" height="72" fill="url(#oMajor)"/>
+  </g>
+  <rect x="1" y="1" width="1198" height="70" rx="18" fill="none" stroke="#1e3646"/>
+
+  <!-- ══ RULERS ═══════════════════════════════════════════ -->
+  <g stroke="#17303f" fill="none" stroke-width="1">
+    <path d="M100 1v6M200 1v4M300 1v6M400 1v4M500 1v6M600 1v4M700 1v6M800 1v4M900 1v6M1000 1v4M1100 1v6"/>
+    <path d="M100 71v-6M300 71v-6M500 71v-6M700 71v-6M900 71v-6M1100 71v-6"/>
+  </g>
+
+  <!-- ══ REGISTRATION MARKS ═══════════════════════════════ -->
+  <path d="M18 30V18h12M1170 18h12v12M1182 42v12h-12M30 54H18V42"
+        fill="none" stroke="#7FFFD4" stroke-width="1.4" opacity=".5"/>
+
+  <!-- ══ LABEL ════════════════════════════════════════════ -->
+  <rect class="led" x="32" y="32" width="7" height="7" fill="#7FFFD4"/>
+  <text x="50" y="40" class="mono" font-size="9.5" letter-spacing="3.4" fill="#7FFFD4">SOCIAL</text>
+
+  <!-- ══ MARKS — 20×20 each, plate stroke, drawn not imported ══ -->
+  <g fill="none" stroke="#7FFFD4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- INSTAGRAM · aperture in a rounded plate -->
+    <g class="ic ic1" transform="translate(150 26)">
+      <rect x=".7" y=".7" width="18.6" height="18.6" rx="5.4"/>
+      <circle cx="10" cy="10" r="4.9"/>
+      <circle cx="14.9" cy="5.1" r="1.15" fill="#7FFFD4" stroke="none"/>
+    </g>
+
+    <!-- THREADS · the real mark's inner curl turns to mush at 1.4px in a 20px
+         box, so it takes the boxed-glyph treatment instead: same plate as
+         LinkedIn, the handle sigil it is named for, legible at any size -->
+    <g class="ic ic2" transform="translate(210 26)">
+      <rect x=".7" y=".7" width="18.6" height="18.6" rx="4"/>
+      <text x="10" y="14.6" class="mono" font-size="12.5" fill="#7FFFD4"
+            stroke="none" text-anchor="middle">@</text>
+    </g>
+
+    <!-- LINKEDIN · set in the sheet's own mono, so the weight matches -->
+    <g class="ic ic3" transform="translate(270 26)">
+      <rect x=".7" y=".7" width="18.6" height="18.6" rx="4"/>
+      <text x="10" y="14.4" class="mono" font-size="11" font-weight="700" fill="#7FFFD4"
+            stroke="none" text-anchor="middle">in</text>
+    </g>
+
+    <!-- YOUTUBE · 16:9 plate, solid cue triangle -->
+    <g class="ic ic4" transform="translate(330 26)">
+      <rect x=".7" y="3.4" width="18.6" height="13.2" rx="4"/>
+      <path d="M8.1 6.8 13.5 10 8.1 13.2Z" fill="#7FFFD4" stroke="none"/>
+    </g>
+  </g>
+
+  <!-- ══ HANDLE ═══════════════════════════════════════════ -->
+  <text x="378" y="41" class="mono" font-size="12" letter-spacing="3" fill="#e8f0f6" opacity=".92"><tspan fill="#7FFFD4">@</tspan>HANNIE404</text>
+
+  <!-- ══ LEGEND ═══════════════════════════════════════════ -->
+  <text x="1168" y="40" class="mono" font-size="8.5" letter-spacing="2.6" fill="#75899a"
+        text-anchor="end" opacity=".75">INSTAGRAM · THREADS · LINKEDIN · YOUTUBE</text>
+</svg>
