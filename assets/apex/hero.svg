@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-label="Annie Neshreen — Software Engineer, Philippines">
+  <title>Annie Neshreen — Software Engineer</title>
+
+  <!--
+    ┌─────────────────────────────────────────────────────────────┐
+    │  APEX · BOARD 01 — IDENTITY                                 │
+    │                                                             │
+    │  Trackside board language: asphalt ground under a 24°       │
+    │  speed hatch, a rumble-strip kerb along the bottom edge,     │
+    │  direction chevrons along the top, and every tab, divider    │
+    │  and display word leaning 8° into the direction of travel.  │
+    │                                                             │
+    │  PALETTE  asphalt #0a0c0e · ink #f2f5f7 · dim #7e8a90       │
+    │           accent #2ee08a (green sector) · rail #232a30           │
+    │  Bump "2026.08" in the timing strip on revision.            │
+    └─────────────────────────────────────────────────────────────┘
+  -->
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .disp { font-family: "Helvetica Neue", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-weight: 800; }
+
+    .rise { animation: rise 1s cubic-bezier(.2,.75,.2,1) both }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
+    .launch { animation: launch 1.15s cubic-bezier(.14,.85,.2,1) both }
+    @keyframes launch { from { opacity: 0; transform: translateX(-34px) } to { opacity: 1; transform: none } }
+    .d1 { animation-delay: .05s } .d2 { animation-delay: .30s } .d3 { animation-delay: .50s }
+    .d4 { animation-delay: .70s } .d5 { animation-delay: .90s } .d6 { animation-delay: 1.1s }
+
+    /*  FLIP BOARD — five titles on one line, 22s cycle
+     *
+     *  Six rows, 30px apart, inside a 30px window: the strip steps down one
+     *  row per title, and row 6 repeats row 1 so the wrap back to 0 lands on
+     *  identical copy and never pops. The eased timing function applies per
+     *  segment, so each 0.4s flip is eased and each hold sits flat.
+     *
+     *    ROW  TITLE                   HOLD
+     *     1   SOFTWARE ENGINEER       6.0s   ← anchor, holds longest
+     *     2   FULL-STACK DEVELOPER    4.0s
+     *     3   AI ENGINEER             4.0s
+     *     4   FINANCIAL CONSULTANT    4.0s
+     *     5   UI/UX DESIGNER          4.0s
+     *     6   (SOFTWARE ENGINEER)     wrap
+     *
+     *  Adding a title means a sixth hold, a new row, and re-deriving the
+     *  percentages — 1s = 4.5454% of the cycle. Reduced motion drops the
+     *  animation, which parks the strip on row 1: the anchor, alone.
+     */
+    .flip { animation: flip 22s cubic-bezier(.6,0,.15,1) infinite }
+    @keyframes flip {
+      0%,25.45%   { transform: translateY(0) }
+      27.27%,43.64% { transform: translateY(-30px) }
+      45.45%,61.82% { transform: translateY(-60px) }
+      63.64%,80%    { transform: translateY(-90px) }
+      81.82%,98.18% { transform: translateY(-120px) }
+      100%          { transform: translateY(-150px) }
+    }
+
+    /* the car: one lap of FIG. A in 6s. The lit window and the head are cut
+       from the same path and the same arc length, so they cannot drift. */
+    /* dasharray sums to exactly one lap, so the window that walks off the
+       start/finish line walks straight back on — no gap, no pop */
+    .car  { stroke-dasharray: 150 1179.6; animation: lap 6s linear infinite }
+    @keyframes lap { from { stroke-dashoffset: 150 } to { stroke-dashoffset: -1179.6 } }
+    .head { transform: translate(779.36px, 279.40px); animation: ride 6s linear infinite }
+    @keyframes ride {
+      0%{transform:translate(779.36px,279.40px)} 2.273%{transform:translate(809.47px,281.70px)} 4.545%{transform:translate(839.68px,282.40px)}
+      6.818%{transform:translate(869.89px,282.90px)} 9.091%{transform:translate(900.10px,283.63px)} 11.36%{transform:translate(930.32px,284.22px)}
+      13.64%{transform:translate(960.53px,284.68px)} 15.91%{transform:translate(990.75px,285.02px)} 18.18%{transform:translate(1020.96px,285.52px)}
+      20.45%{transform:translate(1051.18px,285.69px)} 22.73%{transform:translate(1081.35px,284.24px)} 25%{transform:translate(1111.34px,280.61px)}
+      27.27%{transform:translate(1138.23px,268.38px)} 29.55%{transform:translate(1128.06px,247.16px)} 31.82%{transform:translate(1098.35px,241.84px)}
+      34.09%{transform:translate(1068.14px,241.92px)} 36.36%{transform:translate(1038.10px,239.78px)} 38.64%{transform:translate(1010.11px,228.67px)}
+      40.91%{transform:translate(1014.75px,208.06px)} 43.18%{transform:translate(1042.78px,196.94px)} 45.45%{transform:translate(1072.77px,193.54px)}
+      47.73%{transform:translate(1102.71px,189.89px)} 50%{transform:translate(1129.77px,176.91px)} 52.27%{transform:translate(1110.68px,163.38px)}
+      54.55%{transform:translate(1103.62px,149.90px)} 56.82%{transform:translate(1122.10px,133.95px)} 59.09%{transform:translate(1094.32px,122.74px)}
+      61.36%{transform:translate(1064.35px,119.09px)} 63.64%{transform:translate(1034.16px,117.91px)} 65.91%{transform:translate(1003.94px,117.59px)}
+      68.18%{transform:translate(973.73px,117.83px)} 70.45%{transform:translate(943.53px,118.92px)} 72.73%{transform:translate(913.36px,120.59px)}
+      75%{transform:translate(883.20px,122.46px)} 77.27%{transform:translate(853.05px,124.56px)} 79.55%{transform:translate(823.26px,129.33px)}
+      81.82%{transform:translate(796.82px,143.19px)} 84.09%{transform:translate(814.99px,160.44px)} 86.36%{transform:translate(828.40px,178.06px)}
+      88.64%{transform:translate(803.29px,194.64px)} 90.91%{transform:translate(825.73px,210.06px)} 93.18%{transform:translate(835.56px,229.92px)}
+      95.45%{transform:translate(811.75px,248.45px)} 97.73%{transform:translate(784.53px,261.31px)} 100%{transform:translate(779.36px,279.40px)}
+    }
+
+    .beacon { animation: beacon 2.2s steps(1) infinite }
+    @keyframes beacon { 0%,46% { opacity: 1 } 46.01%,100% { opacity: .22 } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rise, .launch { animation: none; opacity: 1; transform: none }
+      /* cycle stops on the anchor — row 1, alone in the window */
+      .flip { animation: none }
+      /* no lap to run: the racing line stands in, lit */
+      .car, .head { display: none }
+      .line { opacity: .45 }
+      .beacon { animation: none }
+    }
+  </style>
+
+  <defs>
+    <pattern id="hHatch" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(-24)">
+      <rect x="0" y="0" width="2.2" height="16" fill="#14181c"/>
+    </pattern>
+    <linearGradient id="hFade" x1="6%" y1="100%" x2="86%" y2="0%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".95"/>
+      <stop offset="62%" stop-color="#fff" stop-opacity=".3"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="hMask"><rect width="1200" height="420" fill="url(#hFade)"/></mask>
+    <clipPath id="hFrame"><rect x="0" y="0" width="1200" height="420" rx="3"/></clipPath>
+      <radialGradient id="hGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2ee08a" stop-opacity=".6"/>
+      <stop offset="100%" stop-color="#2ee08a" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="hWin"><rect x="64" y="254" width="520" height="30"/></clipPath>
+  </defs>
+  <rect width="1200" height="420" rx="3" fill="#0a0c0e"/>
+  <g clip-path="url(#hFrame)">
+    <rect width="1200" height="420" fill="url(#hHatch)" mask="url(#hMask)"/>
+    <rect x="0" y="414" width="24" height="5" fill="#2ee08a" opacity=".55"/><rect x="24" y="414" width="24" height="5" fill="#0e1216"/><rect x="48" y="414" width="24" height="5" fill="#1a2026"/><rect x="72" y="414" width="24" height="5" fill="#0e1216"/><rect x="96" y="414" width="24" height="5" fill="#1a2026"/><rect x="120" y="414" width="24" height="5" fill="#0e1216"/><rect x="144" y="414" width="24" height="5" fill="#1a2026"/><rect x="168" y="414" width="24" height="5" fill="#0e1216"/><rect x="192" y="414" width="24" height="5" fill="#1a2026"/><rect x="216" y="414" width="24" height="5" fill="#0e1216"/><rect x="240" y="414" width="24" height="5" fill="#1a2026"/><rect x="264" y="414" width="24" height="5" fill="#0e1216"/><rect x="288" y="414" width="24" height="5" fill="#1a2026"/><rect x="312" y="414" width="24" height="5" fill="#0e1216"/><rect x="336" y="414" width="24" height="5" fill="#1a2026"/><rect x="360" y="414" width="24" height="5" fill="#0e1216"/><rect x="384" y="414" width="24" height="5" fill="#1a2026"/><rect x="408" y="414" width="24" height="5" fill="#0e1216"/><rect x="432" y="414" width="24" height="5" fill="#1a2026"/><rect x="456" y="414" width="24" height="5" fill="#0e1216"/><rect x="480" y="414" width="24" height="5" fill="#1a2026"/><rect x="504" y="414" width="24" height="5" fill="#0e1216"/><rect x="528" y="414" width="24" height="5" fill="#1a2026"/><rect x="552" y="414" width="24" height="5" fill="#0e1216"/><rect x="576" y="414" width="24" height="5" fill="#1a2026"/><rect x="600" y="414" width="24" height="5" fill="#0e1216"/><rect x="624" y="414" width="24" height="5" fill="#1a2026"/><rect x="648" y="414" width="24" height="5" fill="#0e1216"/><rect x="672" y="414" width="24" height="5" fill="#1a2026"/><rect x="696" y="414" width="24" height="5" fill="#0e1216"/><rect x="720" y="414" width="24" height="5" fill="#1a2026"/><rect x="744" y="414" width="24" height="5" fill="#0e1216"/><rect x="768" y="414" width="24" height="5" fill="#1a2026"/><rect x="792" y="414" width="24" height="5" fill="#0e1216"/><rect x="816" y="414" width="24" height="5" fill="#1a2026"/><rect x="840" y="414" width="24" height="5" fill="#0e1216"/><rect x="864" y="414" width="24" height="5" fill="#1a2026"/><rect x="888" y="414" width="24" height="5" fill="#0e1216"/><rect x="912" y="414" width="24" height="5" fill="#1a2026"/><rect x="936" y="414" width="24" height="5" fill="#0e1216"/><rect x="960" y="414" width="24" height="5" fill="#1a2026"/><rect x="984" y="414" width="24" height="5" fill="#0e1216"/><rect x="1008" y="414" width="24" height="5" fill="#1a2026"/><rect x="1032" y="414" width="24" height="5" fill="#0e1216"/><rect x="1056" y="414" width="24" height="5" fill="#1a2026"/><rect x="1080" y="414" width="24" height="5" fill="#0e1216"/><rect x="1104" y="414" width="24" height="5" fill="#1a2026"/><rect x="1128" y="414" width="24" height="5" fill="#0e1216"/><rect x="1152" y="414" width="24" height="5" fill="#1a2026"/><rect x="1176" y="414" width="24" height="5" fill="#0e1216"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="419" rx="3" fill="none" stroke="#232a30"/>
+
+  <!-- ══ DIRECTION CHEVRONS ═══════════════════════════════ -->
+  <path d="M100 1l7 5l-7 5M200 1l7 5l-7 5M300 1l7 5l-7 5M400 1l7 5l-7 5M500 1l7 5l-7 5M600 1l7 5l-7 5M700 1l7 5l-7 5M800 1l7 5l-7 5M900 1l7 5l-7 5M1000 1l7 5l-7 5M1100 1l7 5l-7 5" fill="none" stroke="#232a30" stroke-width="1" opacity=".9"/>
+
+  <!-- ══ BOARD LABEL ══════════════════════════════════════ -->
+  <g class="rise d1">
+    <path class="beacon" d="M67 82h9l-3 10h-9Z" fill="#2ee08a"/>
+    <text x="85" y="91" class="mono" font-size="11" letter-spacing="4.5" fill="#2ee08a">GRID · P01</text>
+    <text x="1136" y="91" class="mono" font-size="11" letter-spacing="4.5" fill="#7e8a90" text-anchor="end" opacity=".85">BOARD 01 / 02</text>
+  </g>
+  <g fill="#f2f5f7" opacity=".22"><rect x="1152" y="12" width="6" height="6"/><rect x="1164" y="12" width="6" height="6"/><rect x="1158" y="18" width="6" height="6"/><rect x="1170" y="18" width="6" height="6"/></g>
+
+  <!-- ══ NAME ═════════════════════════════════════════════ -->
+  <g transform="translate(64 186) skewX(-8)" class="disp" font-size="66">
+    <g class="launch d2"><text y="0" fill="#f2f5f7" textLength="603" lengthAdjust="spacing">ANNIE NESHREEN</text></g>
+  </g>
+
+  <!-- ══ MAIL PLATE ═══════════════════════════════════════ -->
+  <g class="rise d3">
+    <path d="M71 206h229l-7 26H64Z" fill="#0f1317" stroke="#232a30" stroke-width="1"/>
+    <path d="M71 206h6l-7 26h-6Z" fill="#2ee08a" opacity=".9"/>
+    <text x="82" y="224" class="mono" font-size="10.5" letter-spacing="2" fill="#f2f5f7"
+          textLength="191" lengthAdjust="spacing" opacity=".9">annie.business04@gmail.com</text>
+  </g>
+
+  <!-- ══ TITLE FLIP BOARD ═════════════════════════════════
+       Six rows in a 30px window; see the FLIP BOARD note in <style> before
+       touching the copy — rows, holds and percentages move together. -->
+  <g class="rise d4">
+    <path d="M64 254h520M64 284h520" stroke="#232a30" stroke-width="1" opacity=".7" fill="none"/>
+    <g clip-path="url(#hWin)">
+      <g class="flip mono" font-size="17" letter-spacing="6" fill="#f2f5f7" opacity=".92">
+        <text x="64" y="274">SOFTWARE ENGINEER</text>
+        <text x="64" y="304">FULL-STACK DEVELOPER</text>
+        <text x="64" y="334">AI ENGINEER</text>
+        <text x="64" y="364">FINANCIAL CONSULTANT</text>
+        <text x="64" y="394">UI/UX DESIGNER</text>
+        <text x="64" y="424">SOFTWARE ENGINEER</text>
+      </g>
+    </g>
+    <path d="M64 287h120" stroke="#2ee08a" stroke-width="2" fill="none"/>
+  </g>
+
+  <!-- ══ FIG. A — CIRCUIT ═════════════════════════════════
+       One closed lap. The ribbon, the racing line, the sector ticks, the lit
+       window and the car are all cut from the same generated path. -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M779.4 279.4C796.0 282.5 844.6 282.2 879.2 283.1C913.8 284.1 954.7 284.7 986.7 285.0C1018.7 285.3 1047.5 286.5 1071.2 285.0C1094.9 283.4 1117.3 280.9 1128.8 275.7C1140.3 270.4 1144.8 258.9 1140.3 253.4C1135.8 247.8 1118.6 244.4 1101.9 242.2C1085.3 240.0 1057.1 244.1 1040.5 240.3C1023.8 236.6 1002.1 227.0 1002.1 219.9C1002.1 212.8 1023.8 202.5 1040.5 197.6C1057.1 192.6 1086.6 194.5 1101.9 190.1C1117.3 185.8 1133.9 177.1 1132.6 171.5C1131.4 165.9 1095.5 162.2 1094.2 156.6C1093.0 151.1 1126.2 143.9 1125.0 138.0C1123.7 132.2 1108.3 124.7 1086.6 121.3C1064.8 117.9 1025.1 117.6 994.4 117.6C963.7 117.6 930.4 119.4 902.2 121.3C874.1 123.2 843.4 124.1 825.4 128.7C807.5 133.4 793.4 142.1 794.7 149.2C796.0 156.3 831.8 163.5 833.1 171.5C834.4 179.6 801.1 189.5 802.4 197.6C803.7 205.6 839.5 211.2 840.8 219.9C842.1 228.6 820.3 242.2 810.1 249.6C799.8 257.1 784.5 259.6 779.4 264.5C774.2 269.5 762.7 276.3 779.4 279.4Z" stroke="#232a30" stroke-width="8"/>
+    <path d="M779.4 279.4C796.0 282.5 844.6 282.2 879.2 283.1C913.8 284.1 954.7 284.7 986.7 285.0C1018.7 285.3 1047.5 286.5 1071.2 285.0C1094.9 283.4 1117.3 280.9 1128.8 275.7C1140.3 270.4 1144.8 258.9 1140.3 253.4C1135.8 247.8 1118.6 244.4 1101.9 242.2C1085.3 240.0 1057.1 244.1 1040.5 240.3C1023.8 236.6 1002.1 227.0 1002.1 219.9C1002.1 212.8 1023.8 202.5 1040.5 197.6C1057.1 192.6 1086.6 194.5 1101.9 190.1C1117.3 185.8 1133.9 177.1 1132.6 171.5C1131.4 165.9 1095.5 162.2 1094.2 156.6C1093.0 151.1 1126.2 143.9 1125.0 138.0C1123.7 132.2 1108.3 124.7 1086.6 121.3C1064.8 117.9 1025.1 117.6 994.4 117.6C963.7 117.6 930.4 119.4 902.2 121.3C874.1 123.2 843.4 124.1 825.4 128.7C807.5 133.4 793.4 142.1 794.7 149.2C796.0 156.3 831.8 163.5 833.1 171.5C834.4 179.6 801.1 189.5 802.4 197.6C803.7 205.6 839.5 211.2 840.8 219.9C842.1 228.6 820.3 242.2 810.1 249.6C799.8 257.1 784.5 259.6 779.4 264.5C774.2 269.5 762.7 276.3 779.4 279.4Z" stroke="#0a0c0e" stroke-width="4.5"/>
+    <path class="line" d="M779.4 279.4C796.0 282.5 844.6 282.2 879.2 283.1C913.8 284.1 954.7 284.7 986.7 285.0C1018.7 285.3 1047.5 286.5 1071.2 285.0C1094.9 283.4 1117.3 280.9 1128.8 275.7C1140.3 270.4 1144.8 258.9 1140.3 253.4C1135.8 247.8 1118.6 244.4 1101.9 242.2C1085.3 240.0 1057.1 244.1 1040.5 240.3C1023.8 236.6 1002.1 227.0 1002.1 219.9C1002.1 212.8 1023.8 202.5 1040.5 197.6C1057.1 192.6 1086.6 194.5 1101.9 190.1C1117.3 185.8 1133.9 177.1 1132.6 171.5C1131.4 165.9 1095.5 162.2 1094.2 156.6C1093.0 151.1 1126.2 143.9 1125.0 138.0C1123.7 132.2 1108.3 124.7 1086.6 121.3C1064.8 117.9 1025.1 117.6 994.4 117.6C963.7 117.6 930.4 119.4 902.2 121.3C874.1 123.2 843.4 124.1 825.4 128.7C807.5 133.4 793.4 142.1 794.7 149.2C796.0 156.3 831.8 163.5 833.1 171.5C834.4 179.6 801.1 189.5 802.4 197.6C803.7 205.6 839.5 211.2 840.8 219.9C842.1 228.6 820.3 242.2 810.1 249.6C799.8 257.1 784.5 259.6 779.4 264.5C774.2 269.5 762.7 276.3 779.4 279.4Z" stroke="#2ee08a" stroke-width="1.4" opacity=".16"/>
+    <path d="M1078.4 249.7L1078.0 233.7M993.9 125.6L993.9 109.6" stroke="#7e8a90" stroke-width="1.6" opacity=".8"/>
+    <path class="car" d="M779.4 279.4C796.0 282.5 844.6 282.2 879.2 283.1C913.8 284.1 954.7 284.7 986.7 285.0C1018.7 285.3 1047.5 286.5 1071.2 285.0C1094.9 283.4 1117.3 280.9 1128.8 275.7C1140.3 270.4 1144.8 258.9 1140.3 253.4C1135.8 247.8 1118.6 244.4 1101.9 242.2C1085.3 240.0 1057.1 244.1 1040.5 240.3C1023.8 236.6 1002.1 227.0 1002.1 219.9C1002.1 212.8 1023.8 202.5 1040.5 197.6C1057.1 192.6 1086.6 194.5 1101.9 190.1C1117.3 185.8 1133.9 177.1 1132.6 171.5C1131.4 165.9 1095.5 162.2 1094.2 156.6C1093.0 151.1 1126.2 143.9 1125.0 138.0C1123.7 132.2 1108.3 124.7 1086.6 121.3C1064.8 117.9 1025.1 117.6 994.4 117.6C963.7 117.6 930.4 119.4 902.2 121.3C874.1 123.2 843.4 124.1 825.4 128.7C807.5 133.4 793.4 142.1 794.7 149.2C796.0 156.3 831.8 163.5 833.1 171.5C834.4 179.6 801.1 189.5 802.4 197.6C803.7 205.6 839.5 211.2 840.8 219.9C842.1 228.6 820.3 242.2 810.1 249.6C799.8 257.1 784.5 259.6 779.4 264.5C774.2 269.5 762.7 276.3 779.4 279.4Z" stroke="#2ee08a" stroke-width="2.6"/>
+  </g>
+  <g transform="translate(779.4 279.4) rotate(10.9)"><g fill="#f2f5f7" opacity=".8"><rect x="-9" y="-3" width="3" height="3"/><rect x="-3" y="-3" width="3" height="3"/><rect x="3" y="-3" width="3" height="3"/><rect x="-6" y="0" width="3" height="3"/><rect x="0" y="0" width="3" height="3"/><rect x="6" y="0" width="3" height="3"/></g></g>
+  <g class="head">
+    <circle r="15" fill="url(#hGlow)"/>
+    <circle r="3.4" fill="#f2f5f7"/>
+  </g>
+
+  <g class="rise d6">
+    <circle cx="1130.5" cy="274.8" r="2" fill="#7e8a90"/>
+    <path d="M1130.5 274.8l18 15H1136" fill="none" stroke="#7e8a90" stroke-width="1" opacity=".55"/>
+    <text x="1136" y="322" class="mono" font-size="10" letter-spacing="2.4" fill="#7e8a90" text-anchor="end">FIG. A — CIRCUIT</text>
+  </g>
+
+  <!-- ══ TIMING STRIP ═════════════════════════════════════ -->
+  <g class="rise d6">
+    <path d="M32 336h1136" stroke="#232a30" stroke-width="1"/>
+    <path d="M32 336h108" stroke="#2ee08a" stroke-width="2.4"/>
+    <g stroke="#232a30" stroke-width="1" opacity=".9" fill="none">
+      <path d="M264 346l-6 34M491 346l-6 34M719 346l-6 34M946 346l-6 34"/>
+    </g>
+    <g class="mono" font-size="8.5" letter-spacing="2.6" fill="#7e8a90" opacity=".85">
+      <text x="32" y="360">SITE</text>
+      <text x="270" y="360">EXPERIENCE</text>
+      <text x="497" y="360">BASE</text>
+      <text x="725" y="360">ZONE</text>
+      <text x="952" y="360">REVISION</text>
+    </g>
+    <g class="mono" font-size="12" letter-spacing="1.1" fill="#f2f5f7" opacity=".92">
+      <text x="32" y="382">DEV-ANNIE.VERCEL.COM</text>
+      <text x="270" y="382">SINCE 2021</text>
+      <text x="497" y="382">PHILIPPINES</text>
+      <text x="725" y="382">UTC+08:00</text>
+      <text x="952" y="382" fill="#2ee08a">2026.08</text>
+    </g>
+  </g>
+</svg>
