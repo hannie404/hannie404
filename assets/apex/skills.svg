@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 510" width="1200" height="510" role="img" aria-label="Annie Neshreen — skills index: frontend, backend, AI, platform, craft">
+  <title>Annie Neshreen — Skills</title>
+
+  <!--
+    ┌─────────────────────────────────────────────────────────────┐
+    │  APEX · BOARD 02 — TIMING TOWER                             │
+    │                                                             │
+    │  ONE CAUSE, EVERY EFFECT. A flag sweep crosses the board in  │
+    │  7s, leaning 8° like everything else here. Nothing runs on   │
+    │  a private timer: a tab lights and a flag column lifts       │
+    │  BECAUSE the sweep just reached it.                          │
+    │                                                             │
+    │  Because the sweep is skewed, it reaches a point at          │
+    │  x + y·tan8°, not at x. That effective coordinate is         │
+    │  quantised into 24 columns (.w0 – .w23), delay = 7s × w/24,  │
+    │  and every animated part takes the class of the column its   │
+    │  centre falls in. One shared scale — the whole board stays   │
+    │  in phase and adding an entry is a one-line job.             │
+    │                                                             │
+    │  PALETTE  asphalt #0a0c0e · ink #f2f5f7 · dim #7e8a90       │
+    │           accent #2ee08a (green sector) · rail #232a30           │
+    │  32 entries · 5 classes · REV 2026.08                       │
+    └─────────────────────────────────────────────────────────────┘
+  -->
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .disp { font-family: "Helvetica Neue", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-weight: 800; }
+
+    .rise { animation: rise 1s cubic-bezier(.2,.75,.2,1) both }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: none } }
+    .launch { animation: launch 1.15s cubic-bezier(.14,.85,.2,1) both }
+    @keyframes launch { from { opacity: 0; transform: translateX(-34px) } to { opacity: 1; transform: none } }
+    .d1 { animation-delay: .05s } .d2 { animation-delay: .30s } .d3 { animation-delay: .45s }
+    .d4 { animation-delay: .60s } .d5 { animation-delay: .75s } .d6 { animation-delay: .90s }
+
+    /* ── the sweep: the one clock everything else answers to ── */
+    .sweep { animation: sweep 7s linear infinite }
+    @keyframes sweep {
+      0% { transform: translateX(-80px); opacity: 0 }
+      3%,94% { opacity: .6 }
+      100% { transform: translateX(1276px); opacity: 0 }
+    }
+
+    /* tab: lit as the sweep arrives, decaying back to resting ink */
+    .tab   { opacity: .5; animation: wake 7s cubic-bezier(.15,.75,.3,1) infinite }
+    @keyframes wake { 0% { opacity: 1 } 13% { opacity: .5 } 100% { opacity: .5 } }
+    .flash { fill: #2ee08a; opacity: 0; animation: flash 7s cubic-bezier(.15,.75,.3,1) infinite }
+    @keyframes flash { 0% { opacity: .3 } 13% { opacity: 0 } 100% { opacity: 0 } }
+
+    /* flag column: snaps to full on the sweep, settling to 26% behind it */
+    .flag { fill: #f2f5f7; opacity: .22; animation: furl 7s cubic-bezier(.15,.75,.3,1) infinite }
+    @keyframes furl {
+      0%   { opacity: .95; transform: translateY(-5px) }
+      13%  { opacity: .22; transform: none }
+      100% { opacity: .22; transform: none }
+    }
+
+    .w5 { animation-delay: 1.458s }
+    .w6 { animation-delay: 1.750s }
+    .w7 { animation-delay: 2.042s }
+    .w8 { animation-delay: 2.333s }
+    .w9 { animation-delay: 2.625s }
+    .w10 { animation-delay: 2.917s }
+    .w11 { animation-delay: 3.208s }
+    .w12 { animation-delay: 3.500s }
+    .w13 { animation-delay: 3.792s }
+    .w14 { animation-delay: 4.083s }
+    .w15 { animation-delay: 4.375s }
+    .w16 { animation-delay: 4.667s }
+    .w17 { animation-delay: 4.958s }
+    .w18 { animation-delay: 5.250s }
+    .w19 { animation-delay: 5.542s }
+    .w20 { animation-delay: 5.833s }
+    .w21 { animation-delay: 6.125s }
+
+    .cat { font-size: 9.5px; letter-spacing: 2.6px; fill: #7e8a90; opacity: .9;
+           font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace }
+    .beacon { animation: beacon 2.2s steps(1) infinite }
+    @keyframes beacon { 0%,46% { opacity: 1 } 46.01%,100% { opacity: .22 } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rise, .launch { animation: none; opacity: 1; transform: none }
+      /* no wavefront: every tab rests lit, the flag rests evenly lit */
+      .tab { animation: none; opacity: .88 }
+      .flash { animation: none; opacity: 0 }
+      .flag { animation: none; opacity: .55; transform: none }
+      .beacon { animation: none }
+      .sweep { display: none }
+    }
+  </style>
+
+  <defs>
+    <pattern id="sHatch" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(-24)">
+      <rect x="0" y="0" width="2.2" height="16" fill="#14181c"/>
+    </pattern>
+    <linearGradient id="sFade" x1="4%" y1="96%" x2="84%" y2="0%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".95"/>
+      <stop offset="62%" stop-color="#fff" stop-opacity=".3"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="sMask"><rect width="1200" height="510" fill="url(#sFade)"/></mask>
+    <clipPath id="sFrame"><rect x="0" y="0" width="1200" height="510" rx="3"/></clipPath>
+      <linearGradient id="sSweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2ee08a" stop-opacity="0"/>
+      <stop offset="86%" stop-color="#2ee08a" stop-opacity=".14"/>
+      <stop offset="96%" stop-color="#2ee08a" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#f2f5f7" stop-opacity=".75"/>
+    </linearGradient>
+    <linearGradient id="sVeilG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000"/>
+      <stop offset="9%" stop-color="#fff"/>
+      <stop offset="91%" stop-color="#fff"/>
+      <stop offset="100%" stop-color="#000"/>
+    </linearGradient>
+    <mask id="sVeil"><rect width="1200" height="510" fill="url(#sVeilG)"/></mask>
+    <linearGradient id="sFurlG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="58%" stop-color="#fff" stop-opacity=".8"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity=".3"/>
+    </linearGradient>
+    <mask id="sFurl"><rect x="760" y="110" width="380" height="120" fill="url(#sFurlG)"/></mask>
+  </defs>
+  <rect width="1200" height="510" rx="3" fill="#0a0c0e"/>
+  <g clip-path="url(#sFrame)">
+    <rect width="1200" height="510" fill="url(#sHatch)" mask="url(#sMask)"/>
+    <rect x="0" y="504" width="24" height="5" fill="#2ee08a" opacity=".55"/><rect x="24" y="504" width="24" height="5" fill="#0e1216"/><rect x="48" y="504" width="24" height="5" fill="#1a2026"/><rect x="72" y="504" width="24" height="5" fill="#0e1216"/><rect x="96" y="504" width="24" height="5" fill="#1a2026"/><rect x="120" y="504" width="24" height="5" fill="#0e1216"/><rect x="144" y="504" width="24" height="5" fill="#1a2026"/><rect x="168" y="504" width="24" height="5" fill="#0e1216"/><rect x="192" y="504" width="24" height="5" fill="#1a2026"/><rect x="216" y="504" width="24" height="5" fill="#0e1216"/><rect x="240" y="504" width="24" height="5" fill="#1a2026"/><rect x="264" y="504" width="24" height="5" fill="#0e1216"/><rect x="288" y="504" width="24" height="5" fill="#1a2026"/><rect x="312" y="504" width="24" height="5" fill="#0e1216"/><rect x="336" y="504" width="24" height="5" fill="#1a2026"/><rect x="360" y="504" width="24" height="5" fill="#0e1216"/><rect x="384" y="504" width="24" height="5" fill="#1a2026"/><rect x="408" y="504" width="24" height="5" fill="#0e1216"/><rect x="432" y="504" width="24" height="5" fill="#1a2026"/><rect x="456" y="504" width="24" height="5" fill="#0e1216"/><rect x="480" y="504" width="24" height="5" fill="#1a2026"/><rect x="504" y="504" width="24" height="5" fill="#0e1216"/><rect x="528" y="504" width="24" height="5" fill="#1a2026"/><rect x="552" y="504" width="24" height="5" fill="#0e1216"/><rect x="576" y="504" width="24" height="5" fill="#1a2026"/><rect x="600" y="504" width="24" height="5" fill="#0e1216"/><rect x="624" y="504" width="24" height="5" fill="#1a2026"/><rect x="648" y="504" width="24" height="5" fill="#0e1216"/><rect x="672" y="504" width="24" height="5" fill="#1a2026"/><rect x="696" y="504" width="24" height="5" fill="#0e1216"/><rect x="720" y="504" width="24" height="5" fill="#1a2026"/><rect x="744" y="504" width="24" height="5" fill="#0e1216"/><rect x="768" y="504" width="24" height="5" fill="#1a2026"/><rect x="792" y="504" width="24" height="5" fill="#0e1216"/><rect x="816" y="504" width="24" height="5" fill="#1a2026"/><rect x="840" y="504" width="24" height="5" fill="#0e1216"/><rect x="864" y="504" width="24" height="5" fill="#1a2026"/><rect x="888" y="504" width="24" height="5" fill="#0e1216"/><rect x="912" y="504" width="24" height="5" fill="#1a2026"/><rect x="936" y="504" width="24" height="5" fill="#0e1216"/><rect x="960" y="504" width="24" height="5" fill="#1a2026"/><rect x="984" y="504" width="24" height="5" fill="#0e1216"/><rect x="1008" y="504" width="24" height="5" fill="#1a2026"/><rect x="1032" y="504" width="24" height="5" fill="#0e1216"/><rect x="1056" y="504" width="24" height="5" fill="#1a2026"/><rect x="1080" y="504" width="24" height="5" fill="#0e1216"/><rect x="1104" y="504" width="24" height="5" fill="#1a2026"/><rect x="1128" y="504" width="24" height="5" fill="#0e1216"/><rect x="1152" y="504" width="24" height="5" fill="#1a2026"/><rect x="1176" y="504" width="24" height="5" fill="#0e1216"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="509" rx="3" fill="none" stroke="#232a30"/>
+
+  <!-- ══ DIRECTION CHEVRONS ═══════════════════════════════ -->
+  <path d="M100 1l7 5l-7 5M200 1l7 5l-7 5M300 1l7 5l-7 5M400 1l7 5l-7 5M500 1l7 5l-7 5M600 1l7 5l-7 5M700 1l7 5l-7 5M800 1l7 5l-7 5M900 1l7 5l-7 5M1000 1l7 5l-7 5M1100 1l7 5l-7 5" fill="none" stroke="#232a30" stroke-width="1" opacity=".9"/>
+  <g clip-path="url(#sFrame)" mask="url(#sVeil)">
+    <g transform="skewX(-8)"><rect class="sweep" x="0" y="-40" width="56" height="590" fill="url(#sSweep)" opacity="0"/></g>
+  </g>
+
+  <!-- ══ BOARD LABEL ══════════════════════════════════════ -->
+  <g class="rise d1">
+    <path class="beacon" d="M67 72h9l-3 10h-9Z" fill="#2ee08a"/>
+    <text x="85" y="81" class="mono" font-size="11" letter-spacing="4.5" fill="#2ee08a">INDEX · 002</text>
+    <text x="1136" y="81" class="mono" font-size="11" letter-spacing="4.5" fill="#7e8a90" text-anchor="end" opacity=".85">BOARD 02 / 02</text>
+  </g>
+  <g fill="#f2f5f7" opacity=".22"><rect x="1152" y="12" width="6" height="6"/><rect x="1164" y="12" width="6" height="6"/><rect x="1158" y="18" width="6" height="6"/><rect x="1170" y="18" width="6" height="6"/></g>
+
+  <!-- ══ DISPLAY ══════════════════════════════════════════ -->
+  <g class="launch d2">
+    <g transform="translate(64 176) skewX(-8)">
+      <text y="0" class="disp" font-size="66" fill="#f2f5f7" textLength="250" lengthAdjust="spacing">SKILLS</text>
+    </g>
+  </g>
+
+  <!-- ══ INDEX PLATE ══════════════════════════════════════ -->
+  <g class="rise d3">
+    <path d="M71 196h163l-7 26H64Z" fill="#0f1317" stroke="#232a30" stroke-width="1"/>
+    <path d="M71 196h6l-7 26h-6Z" fill="#2ee08a" opacity=".9"/>
+    <text x="82" y="214" class="mono" font-size="10.5" letter-spacing="2" fill="#f2f5f7"
+          textLength="125" lengthAdjust="spacing" opacity=".9">TECH INDEX · 32</text>
+  </g>
+
+  <!-- ══ FIG. B — CHEQUER ═════════════════════════════════
+       A chequered flag furled on a sine: one group per column, each keyed to
+       the sweep's arrival, so the flag ripples in step with the board. -->
+  <g class="rise d2">
+    <path d="M787 122v92" stroke="#232a30" stroke-width="1.5" fill="none"/>
+    <g mask="url(#sFurl)" transform="translate(948 163) skewX(-8) translate(-948 -163)"><g class="flag w15"><rect x="780" y="128.0" width="14" height="14"/><rect x="780" y="156.0" width="14" height="14"/><rect x="780" y="184.0" width="14" height="14"/></g><g class="flag w16"><rect x="794" y="146.5" width="14" height="14"/><rect x="794" y="174.5" width="14" height="14"/></g><g class="flag w16"><rect x="808" y="135.8" width="14" height="14"/><rect x="808" y="163.8" width="14" height="14"/><rect x="808" y="191.8" width="14" height="14"/></g><g class="flag w16"><rect x="822" y="151.0" width="14" height="14"/><rect x="822" y="179.0" width="14" height="14"/></g><g class="flag w16"><rect x="836" y="135.9" width="14" height="14"/><rect x="836" y="163.9" width="14" height="14"/><rect x="836" y="191.9" width="14" height="14"/></g><g class="flag w17"><rect x="850" y="146.6" width="14" height="14"/><rect x="850" y="174.6" width="14" height="14"/></g><g class="flag w17"><rect x="864" y="128.2" width="14" height="14"/><rect x="864" y="156.2" width="14" height="14"/><rect x="864" y="184.2" width="14" height="14"/></g><g class="flag w17"><rect x="878" y="137.7" width="14" height="14"/><rect x="878" y="165.7" width="14" height="14"/></g><g class="flag w17"><rect x="892" y="120.3" width="14" height="14"/><rect x="892" y="148.3" width="14" height="14"/><rect x="892" y="176.3" width="14" height="14"/></g><g class="flag w18"><rect x="906" y="133.0" width="14" height="14"/><rect x="906" y="161.0" width="14" height="14"/></g><g class="flag w18"><rect x="920" y="120.0" width="14" height="14"/><rect x="920" y="148.0" width="14" height="14"/><rect x="920" y="176.0" width="14" height="14"/></g><g class="flag w18"><rect x="934" y="137.2" width="14" height="14"/><rect x="934" y="165.2" width="14" height="14"/></g><g class="flag w18"><rect x="948" y="127.6" width="14" height="14"/><rect x="948" y="155.6" width="14" height="14"/><rect x="948" y="183.6" width="14" height="14"/></g><g class="flag w19"><rect x="962" y="146.1" width="14" height="14"/><rect x="962" y="174.1" width="14" height="14"/></g><g class="flag w19"><rect x="976" y="135.6" width="14" height="14"/><rect x="976" y="163.6" width="14" height="14"/><rect x="976" y="191.6" width="14" height="14"/></g><g class="flag w19"><rect x="990" y="151.0" width="14" height="14"/><rect x="990" y="179.0" width="14" height="14"/></g><g class="flag w20"><rect x="1004" y="136.0" width="14" height="14"/><rect x="1004" y="164.0" width="14" height="14"/><rect x="1004" y="192.0" width="14" height="14"/></g><g class="flag w20"><rect x="1018" y="147.0" width="14" height="14"/><rect x="1018" y="175.0" width="14" height="14"/></g><g class="flag w20"><rect x="1032" y="128.6" width="14" height="14"/><rect x="1032" y="156.6" width="14" height="14"/><rect x="1032" y="184.6" width="14" height="14"/></g><g class="flag w20"><rect x="1046" y="138.0" width="14" height="14"/><rect x="1046" y="166.0" width="14" height="14"/></g><g class="flag w21"><rect x="1060" y="120.5" width="14" height="14"/><rect x="1060" y="148.5" width="14" height="14"/><rect x="1060" y="176.5" width="14" height="14"/></g><g class="flag w21"><rect x="1074" y="133.0" width="14" height="14"/><rect x="1074" y="161.0" width="14" height="14"/></g><g class="flag w21"><rect x="1088" y="119.9" width="14" height="14"/><rect x="1088" y="147.9" width="14" height="14"/><rect x="1088" y="175.9" width="14" height="14"/></g><g class="flag w21"><rect x="1102" y="136.9" width="14" height="14"/><rect x="1102" y="164.9" width="14" height="14"/></g></g>
+    <text x="1136" y="220" class="mono" font-size="10" letter-spacing="2.4" fill="#7e8a90" text-anchor="end">FIG. B — CHEQUER</text>
+  </g>
+
+  <!-- ══ CLASSIFICATION ═══════════════════════════════════ -->
+  <g><rect x="44" y="237" width="1112" height="42" fill="#0f1317"/><rect x="44" y="337" width="1112" height="42" fill="#0f1317"/><rect x="44" y="437" width="1112" height="42" fill="#0f1317"/></g>
+  <path d="M180 237V465" stroke="#232a30" stroke-width="1" fill="none"/>
+  <g class="mono" font-size="10.5" letter-spacing="2" fill="#2ee08a">
+    <g class="rise d2"><path d="M69 247h31l-5 21H64Z" fill="#2ee08a" opacity=".92"/><text x="82" y="262" class="mono" font-size="11" font-weight="700" letter-spacing="1" fill="#0a0c0e" text-anchor="middle">01</text><text x="108" y="262" class="cat">FRONTEND</text><g class="tab w5"><path class="flash w5" d="M201 244h86l-7 28H194 Z"/><path d="M201 244h86l-7 28H194 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="206" y="262" textLength="58" lengthAdjust="spacing">NEXT.JS</text></g><g class="tab w7"><path class="flash w7" d="M306 244h70l-7 28H299 Z"/><path d="M306 244h70l-7 28H299 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="311" y="262" textLength="42" lengthAdjust="spacing">REACT</text></g><g class="tab w9"><path class="flash w9" d="M395 244h111l-7 28H388 Z"/><path d="M395 244h111l-7 28H388 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="400" y="262" textLength="83" lengthAdjust="spacing">TYPESCRIPT</text></g><g class="tab w12"><path class="flash w12" d="M525 244h111l-7 28H518 Z"/><path d="M525 244h111l-7 28H518 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="530" y="262" textLength="83" lengthAdjust="spacing">JAVASCRIPT</text></g><g class="tab w14"><path class="flash w14" d="M655 244h128l-7 28H648 Z"/><path d="M655 244h128l-7 28H648 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="660" y="262" textLength="100" lengthAdjust="spacing">TAILWIND CSS</text></g><g class="tab w17"><path class="flash w17" d="M802 244h128l-7 28H795 Z"/><path d="M802 244h128l-7 28H795 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="807" y="262" textLength="100" lengthAdjust="spacing">REACT NATIVE</text></g></g>
+    <g class="rise d3"><path d="M69 297h31l-5 21H64Z" fill="#2ee08a" opacity=".92"/><text x="82" y="312" class="mono" font-size="11" font-weight="700" letter-spacing="1" fill="#0a0c0e" text-anchor="middle">02</text><text x="108" y="312" class="cat">BACKEND</text><g class="tab w5"><path class="flash w5" d="M201 294h86l-7 28H194 Z"/><path d="M201 294h86l-7 28H194 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="206" y="312" textLength="58" lengthAdjust="spacing">NODE.JS</text></g><g class="tab w8"><path class="flash w8" d="M306 294h111l-7 28H299 Z"/><path d="M306 294h111l-7 28H299 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="311" y="312" textLength="83" lengthAdjust="spacing">POSTGRESQL</text></g><g class="tab w10"><path class="flash w10" d="M436 294h78l-7 28H429 Z"/><path d="M436 294h78l-7 28H429 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="441" y="312" textLength="50" lengthAdjust="spacing">PRISMA</text></g><g class="tab w12"><path class="flash w12" d="M533 294h94l-7 28H526 Z"/><path d="M533 294h94l-7 28H526 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="538" y="312" textLength="66" lengthAdjust="spacing">SUPABASE</text></g><g class="tab w14"><path class="flash w14" d="M646 294h103l-7 28H639 Z"/><path d="M646 294h103l-7 28H639 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="651" y="312" textLength="75" lengthAdjust="spacing">REST APIS</text></g><g class="tab w16"><path class="flash w16" d="M768 294h111l-7 28H761 Z"/><path d="M768 294h111l-7 28H761 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="773" y="312" textLength="83" lengthAdjust="spacing">WEBSOCKETS</text></g><g class="tab w18"><path class="flash w18" d="M898 294h70l-7 28H891 Z"/><path d="M898 294h70l-7 28H891 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="903" y="312" textLength="42" lengthAdjust="spacing">REDIS</text></g></g>
+    <g class="rise d4"><path d="M69 347h31l-5 21H64Z" fill="#2ee08a" opacity=".92"/><text x="82" y="362" class="mono" font-size="11" font-weight="700" letter-spacing="1" fill="#0a0c0e" text-anchor="middle">03</text><text x="108" y="362" class="cat">AI</text><g class="tab w6"><path class="flash w6" d="M201 344h144l-7 28H194 Z"/><path d="M201 344h144l-7 28H194 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="206" y="362" textLength="116" lengthAdjust="spacing">AI ENGINEERING</text></g><g class="tab w9"><path class="flash w9" d="M364 344h94l-7 28H357 Z"/><path d="M364 344h94l-7 28H357 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="369" y="362" textLength="66" lengthAdjust="spacing">LLM APIS</text></g><g class="tab w11"><path class="flash w11" d="M477 344h103l-7 28H470 Z"/><path d="M477 344h103l-7 28H470 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="482" y="362" textLength="75" lengthAdjust="spacing">AI AGENTS</text></g><g class="tab w13"><path class="flash w13" d="M599 344h53l-7 28H592 Z"/><path d="M599 344h53l-7 28H592 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="604" y="362" textLength="25" lengthAdjust="spacing">RAG</text></g><g class="tab w15"><path class="flash w15" d="M671 344h136l-7 28H664 Z"/><path d="M671 344h136l-7 28H664 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="676" y="362" textLength="108" lengthAdjust="spacing">PROMPT DESIGN</text></g><g class="tab w17"><path class="flash w17" d="M826 344h111l-7 28H819 Z"/><path d="M826 344h111l-7 28H819 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="831" y="362" textLength="83" lengthAdjust="spacing">AUTOMATION</text></g></g>
+    <g class="rise d5"><path d="M69 397h31l-5 21H64Z" fill="#2ee08a" opacity=".92"/><text x="82" y="412" class="mono" font-size="11" font-weight="700" letter-spacing="1" fill="#0a0c0e" text-anchor="middle">04</text><text x="108" y="412" class="cat">PLATFORM</text><g class="tab w5"><path class="flash w5" d="M201 394h53l-7 28H194 Z"/><path d="M201 394h53l-7 28H194 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="206" y="412" textLength="25" lengthAdjust="spacing">GIT</text></g><g class="tab w7"><path class="flash w7" d="M273 394h144l-7 28H266 Z"/><path d="M273 394h144l-7 28H266 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="278" y="412" textLength="116" lengthAdjust="spacing">GITHUB ACTIONS</text></g><g class="tab w10"><path class="flash w10" d="M436 394h78l-7 28H429 Z"/><path d="M436 394h78l-7 28H429 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="441" y="412" textLength="50" lengthAdjust="spacing">DOCKER</text></g><g class="tab w12"><path class="flash w12" d="M533 394h78l-7 28H526 Z"/><path d="M533 394h78l-7 28H526 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="538" y="412" textLength="50" lengthAdjust="spacing">VERCEL</text></g><g class="tab w13"><path class="flash w13" d="M630 394h70l-7 28H623 Z"/><path d="M630 394h70l-7 28H623 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="635" y="412" textLength="42" lengthAdjust="spacing">CI/CD</text></g><g class="tab w15"><path class="flash w15" d="M719 394h70l-7 28H712 Z"/><path d="M719 394h70l-7 28H712 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="724" y="412" textLength="42" lengthAdjust="spacing">LINUX</text></g><g class="tab w17"><path class="flash w17" d="M808 394h94l-7 28H801 Z"/><path d="M808 394h94l-7 28H801 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="813" y="412" textLength="66" lengthAdjust="spacing">MONOREPO</text></g></g>
+    <g class="rise d6"><path d="M69 447h31l-5 21H64Z" fill="#2ee08a" opacity=".92"/><text x="82" y="462" class="mono" font-size="11" font-weight="700" letter-spacing="1" fill="#0a0c0e" text-anchor="middle">05</text><text x="108" y="462" class="cat">CRAFT</text><g class="tab w5"><path class="flash w5" d="M201 444h53l-7 28H194 Z"/><path d="M201 444h53l-7 28H194 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="206" y="462" textLength="25" lengthAdjust="spacing">SEO</text></g><g class="tab w7"><path class="flash w7" d="M273 444h70l-7 28H266 Z"/><path d="M273 444h70l-7 28H266 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="278" y="462" textLength="42" lengthAdjust="spacing">UI/UX</text></g><g class="tab w9"><path class="flash w9" d="M362 444h70l-7 28H355 Z"/><path d="M362 444h70l-7 28H355 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="367" y="462" textLength="42" lengthAdjust="spacing">FIGMA</text></g><g class="tab w11"><path class="flash w11" d="M451 444h144l-7 28H444 Z"/><path d="M451 444h144l-7 28H444 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="456" y="462" textLength="116" lengthAdjust="spacing">DESIGN SYSTEMS</text></g><g class="tab w14"><path class="flash w14" d="M614 444h136l-7 28H607 Z"/><path d="M614 444h136l-7 28H607 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="619" y="462" textLength="108" lengthAdjust="spacing">ACCESSIBILITY</text></g><g class="tab w17"><path class="flash w17" d="M769 444h119l-7 28H762 Z"/><path d="M769 444h119l-7 28H762 Z" fill="#0f1317" stroke="#2ee08a" stroke-width="1" stroke-opacity=".38"/><text x="774" y="462" textLength="91" lengthAdjust="spacing">PERFORMANCE</text></g></g>
+  </g>
+</svg>

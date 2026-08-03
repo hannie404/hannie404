@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 72" width="1200" height="72" role="img" aria-label="Socials — @hannie404 on Instagram, Threads, LinkedIn and YouTube">
+  <title>@hannie404 — Instagram · Threads · LinkedIn · YouTube</title>
+
+  <!--
+    ┌─────────────────────────────────────────────────────────────┐
+    │  APEX · PADDOCK — 72px, the shortest board in the set        │
+    │                                                             │
+    │  One handle across every channel, so the handle is written   │
+    │  once and the marks carry the difference.                    │
+    │                                                             │
+    │  Every mark is drawn here, not imported: a 22px glyph on     │
+    │  the board's own 1.5px accent stroke, standing upright       │
+    │  inside a tab that leans 8° like every other tab in the      │
+    │  theme. No brand fills, no drop-in logo set. Threads and     │
+    │  LinkedIn take the set-in-mono treatment, because their      │
+    │  real marks turn to mush at this stroke in a 22px box.       │
+    │                                                             │
+    │  Marks pip left to right on the 2.5s clock, the same rhythm  │
+    │  pulse.svg beats at — same rate, separate file, so they can  │
+    │  never be frame-locked; the echo is deliberate, not a sync.  │
+    └─────────────────────────────────────────────────────────────┘
+  -->
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+
+    /* each mark brightens as the ripple reaches it, then settles back */
+    .ic { opacity: .5; animation: pip 2.5s cubic-bezier(.15,.75,.3,1) infinite }
+    @keyframes pip { 0% { opacity: 1 } 16% { opacity: .5 } 100% { opacity: .5 } }
+    .ic2 { animation-delay: .10s } .ic3 { animation-delay: .20s } .ic4 { animation-delay: .30s }
+
+    .beacon { animation: beacon 2.5s steps(1) infinite }
+    @keyframes beacon { 0%,44% { opacity: 1 } 44.01%,100% { opacity: .22 } }
+
+    @media (prefers-reduced-motion: reduce) {
+      /* no ripple: every mark rests evenly lit */
+      .ic { animation: none; opacity: .85 }
+      .beacon { animation: none }
+    }
+  </style>
+
+  <defs>
+    <pattern id="oHatch" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(-24)">
+      <rect x="0" y="0" width="2.2" height="16" fill="#14181c"/>
+    </pattern>
+    <linearGradient id="oFade" x1="3%" y1="100%" x2="76%" y2="0%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".95"/>
+      <stop offset="62%" stop-color="#fff" stop-opacity=".3"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="oMask"><rect width="1200" height="72" fill="url(#oFade)"/></mask>
+    <clipPath id="oFrame"><rect x="0" y="0" width="1200" height="72" rx="3"/></clipPath>
+  </defs>
+  <rect width="1200" height="72" rx="3" fill="#0a0c0e"/>
+  <g clip-path="url(#oFrame)">
+    <rect width="1200" height="72" fill="url(#oHatch)" mask="url(#oMask)"/>
+    <rect x="0" y="66" width="24" height="5" fill="#2ee08a" opacity=".55"/><rect x="24" y="66" width="24" height="5" fill="#0e1216"/><rect x="48" y="66" width="24" height="5" fill="#1a2026"/><rect x="72" y="66" width="24" height="5" fill="#0e1216"/><rect x="96" y="66" width="24" height="5" fill="#1a2026"/><rect x="120" y="66" width="24" height="5" fill="#0e1216"/><rect x="144" y="66" width="24" height="5" fill="#1a2026"/><rect x="168" y="66" width="24" height="5" fill="#0e1216"/><rect x="192" y="66" width="24" height="5" fill="#1a2026"/><rect x="216" y="66" width="24" height="5" fill="#0e1216"/><rect x="240" y="66" width="24" height="5" fill="#1a2026"/><rect x="264" y="66" width="24" height="5" fill="#0e1216"/><rect x="288" y="66" width="24" height="5" fill="#1a2026"/><rect x="312" y="66" width="24" height="5" fill="#0e1216"/><rect x="336" y="66" width="24" height="5" fill="#1a2026"/><rect x="360" y="66" width="24" height="5" fill="#0e1216"/><rect x="384" y="66" width="24" height="5" fill="#1a2026"/><rect x="408" y="66" width="24" height="5" fill="#0e1216"/><rect x="432" y="66" width="24" height="5" fill="#1a2026"/><rect x="456" y="66" width="24" height="5" fill="#0e1216"/><rect x="480" y="66" width="24" height="5" fill="#1a2026"/><rect x="504" y="66" width="24" height="5" fill="#0e1216"/><rect x="528" y="66" width="24" height="5" fill="#1a2026"/><rect x="552" y="66" width="24" height="5" fill="#0e1216"/><rect x="576" y="66" width="24" height="5" fill="#1a2026"/><rect x="600" y="66" width="24" height="5" fill="#0e1216"/><rect x="624" y="66" width="24" height="5" fill="#1a2026"/><rect x="648" y="66" width="24" height="5" fill="#0e1216"/><rect x="672" y="66" width="24" height="5" fill="#1a2026"/><rect x="696" y="66" width="24" height="5" fill="#0e1216"/><rect x="720" y="66" width="24" height="5" fill="#1a2026"/><rect x="744" y="66" width="24" height="5" fill="#0e1216"/><rect x="768" y="66" width="24" height="5" fill="#1a2026"/><rect x="792" y="66" width="24" height="5" fill="#0e1216"/><rect x="816" y="66" width="24" height="5" fill="#1a2026"/><rect x="840" y="66" width="24" height="5" fill="#0e1216"/><rect x="864" y="66" width="24" height="5" fill="#1a2026"/><rect x="888" y="66" width="24" height="5" fill="#0e1216"/><rect x="912" y="66" width="24" height="5" fill="#1a2026"/><rect x="936" y="66" width="24" height="5" fill="#0e1216"/><rect x="960" y="66" width="24" height="5" fill="#1a2026"/><rect x="984" y="66" width="24" height="5" fill="#0e1216"/><rect x="1008" y="66" width="24" height="5" fill="#1a2026"/><rect x="1032" y="66" width="24" height="5" fill="#0e1216"/><rect x="1056" y="66" width="24" height="5" fill="#1a2026"/><rect x="1080" y="66" width="24" height="5" fill="#0e1216"/><rect x="1104" y="66" width="24" height="5" fill="#1a2026"/><rect x="1128" y="66" width="24" height="5" fill="#0e1216"/><rect x="1152" y="66" width="24" height="5" fill="#1a2026"/><rect x="1176" y="66" width="24" height="5" fill="#0e1216"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="71" rx="3" fill="none" stroke="#232a30"/>
+
+  <!-- ══ DIRECTION CHEVRONS ═══════════════════════════════ -->
+  <path d="M100 1l7 5l-7 5M200 1l7 5l-7 5M300 1l7 5l-7 5M400 1l7 5l-7 5M500 1l7 5l-7 5M600 1l7 5l-7 5M700 1l7 5l-7 5M800 1l7 5l-7 5M900 1l7 5l-7 5M1000 1l7 5l-7 5M1100 1l7 5l-7 5" fill="none" stroke="#232a30" stroke-width="1" opacity=".9"/>
+
+  <!-- ══ LABEL ════════════════════════════════════════════ -->
+  <path class="beacon" d="M35 32h9l-3 10h-9Z" fill="#2ee08a"/>
+  <text x="52" y="41" class="mono" font-size="9.5" letter-spacing="3.4" fill="#2ee08a">PADDOCK</text>
+
+  <!-- ══ MARKS — drawn, not imported; upright glyph in a leaning tab ══ -->
+  <g fill="none" stroke="#2ee08a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- INSTAGRAM · aperture on a plate -->
+    <g class="ic ic1" transform="translate(150 25)">
+      <path d="M4.6 0h21.4l-4.6 22H0Z" fill="#0f1317" stroke="#2ee08a" stroke-opacity=".4"/>
+      <rect x="6.2" y="4.2" width="13.6" height="13.6" rx="2"/>
+      <circle cx="13" cy="11" r="3.6"/>
+      <circle cx="17.6" cy="6.4" r="1" fill="#2ee08a" stroke="none"/>
+    </g>
+
+    <!-- THREADS · the real curl is mush at 1.5px in a 22px box, so the mark
+         takes the sigil it is named for, set in the board's own mono -->
+    <g class="ic ic2" transform="translate(212 25)">
+      <path d="M4.6 0h21.4l-4.6 22H0Z" fill="#0f1317" stroke="#2ee08a" stroke-opacity=".4"/>
+      <text x="13" y="15.6" class="mono" font-size="14" fill="#2ee08a" stroke="none" text-anchor="middle">@</text>
+    </g>
+
+    <!-- LINKEDIN · set in the board's own mono, so the weight matches -->
+    <g class="ic ic3" transform="translate(274 25)">
+      <path d="M4.6 0h21.4l-4.6 22H0Z" fill="#0f1317" stroke="#2ee08a" stroke-opacity=".4"/>
+      <text x="13" y="15.2" class="mono" font-size="12" font-weight="700" fill="#2ee08a" stroke="none" text-anchor="middle">in</text>
+    </g>
+
+    <!-- YOUTUBE · 16:9 plate, solid cue triangle -->
+    <g class="ic ic4" transform="translate(336 25)">
+      <path d="M4.6 0h21.4l-4.6 22H0Z" fill="#0f1317" stroke="#2ee08a" stroke-opacity=".4"/>
+      <rect x="4.6" y="5.4" width="16.8" height="11.2" rx="1.5"/>
+      <path d="M10.6 8.2 16.4 11 10.6 13.8Z" fill="#2ee08a" stroke="none"/>
+    </g>
+  </g>
+
+  <!-- ══ HANDLE ═══════════════════════════════════════════ -->
+  <text x="392" y="41" class="mono" font-size="12" letter-spacing="3" fill="#f2f5f7" opacity=".92"><tspan fill="#2ee08a">@</tspan>HANNIE404</text>
+
+  <!-- ══ LEGEND ═══════════════════════════════════════════ -->
+  <text x="1168" y="40" class="mono" font-size="8.5" letter-spacing="2.6" fill="#7e8a90"
+        text-anchor="end" opacity=".8">INSTAGRAM · THREADS · LINKEDIN · YOUTUBE</text>
+</svg>
